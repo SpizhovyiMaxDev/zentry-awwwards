@@ -52,3 +52,42 @@ body {
     src: url("/fonts/zentry-regular.woff2") format("woff2");
   }
 }
+
+@layer utilities {
+  .absolute-center {
+    @apply absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2;
+  }
+
+  .flex-center {
+    @apply flex items-center justify-center;
+  }
+
+  .border-hsla {
+    @apply border border-white/20;
+  }
+
+  .nav-hover-btn {
+    @apply font-general relative ms-10 cursor-pointer text-xs text-blue-50 uppercase;
+  }
+  .nav-hover-btn::after {
+    @apply absolute -bottom-0.5 left-0 h-[2px] w-full origin-bottom-right scale-x-0 bg-neutral-800 transition-transform duration-300 ease-[cubic-bezier(0.65_0.05_0.36_1)];
+    content: "";
+  }
+  .nav-hover-btn:hover::after {
+    @apply origin-bottom-left scale-x-100;
+  }
+  .dark .nav-hover-btn:hover::after {
+    @apply bg-white;
+  }
+
+  .hero-heading {
+    @apply font-zentry text-5xl font-black uppercase sm:right-10 sm:text-7xl md:text-9xl lg:text-[12rem];
+  }
+
+  .animated-word {
+    @apply font-zentry font-black opacity-0;
+    transform: translate3d(10px, 51px, -60px) rotateY(60deg) rotateX(-40deg);
+    transform-origin: 50% 50% -150px !important;
+    will-change: opacity, transform;
+  }
+}
