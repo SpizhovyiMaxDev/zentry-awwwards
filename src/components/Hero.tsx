@@ -13,6 +13,7 @@ function Hero() {
   const [bgIndex, setBgIndex] = useState<number>(1);
   const [hasClicked, setHasClicked] = useState<boolean>(false);
   const [isLoading, setIsLoading] = useState<boolean>(true);
+  const [disableClick, setDisableClick] = useState<boolean>(false);
   const [loadedVideos, setLoadedVideos] = useState<number>(0);
 
   const nextVideoRef = useRef<HTMLVideoElement | null>(null);
@@ -23,8 +24,11 @@ function Hero() {
   const getVideoSrc = (idx: number): string => `videos/hero-${idx}.mp4`;
 
   function handleMiniVideoClick(): void {
+    if (disableClick) return;
+
     setHasClicked(true);
     setCurrIntex(upcomingVideo);
+    setDisableClick(true);
   }
 
   const handleVideoLoad = () => {
@@ -49,20 +53,21 @@ function Hero() {
           scale: 1,
           width: "100%",
           height: "100%",
-          duration: 0.5,
+          duration: 0.75,
           ease: "power1.inOut",
           onStart: () => {
             nextVideoRef.current?.play();
           },
           onComplete: () => {
             setBgIndex(currIndex);
+            setDisableClick(false);
           },
         });
 
         gsap.from("#current-video", {
           transformOrigin: "center center",
           scale: 0,
-          duration: 0.5,
+          duration: 0.75,
           ease: "power1.inOut",
         });
       }
@@ -73,7 +78,7 @@ function Hero() {
   useGSAP(() => {
     gsap.set("#video-frame", {
       clipPath: "polygon(14% 0, 72% 0, 88% 90%, 0 95%)",
-      borderRadius: "0% 0% 40% 10%",
+      borderRadius: "0% 0% 40% 40%",
     });
     gsap.from("#video-frame", {
       clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
@@ -124,7 +129,7 @@ function Hero() {
             loop
             muted
             id="next-video"
-            className="absolute-center invisible z-20 size-64 object-cover object-center"
+            className="absolute-center invisible z-20 size-64 rounded-lg object-cover object-center"
             onLoadedData={handleVideoLoad}
           />
           <video
