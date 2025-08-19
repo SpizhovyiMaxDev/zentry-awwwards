@@ -47,14 +47,13 @@ function Hero() {
   useGSAP(
     function () {
       if (hasClicked && nextVideoRef.current) {
-        gsap.set("#next-video", { visibility: "visible" });
+        gsap.set("#next-video", { visibility: "visible", border: "none" });
         gsap.to("#next-video", {
           transformOrigin: "center center",
           scale: 1,
           width: "100%",
           height: "100%",
           duration: 0.75,
-          ease: "power1.inOut",
           onStart: () => {
             nextVideoRef.current?.play();
           },
@@ -68,7 +67,6 @@ function Hero() {
           transformOrigin: "center center",
           scale: 0,
           duration: 0.75,
-          ease: "power1.inOut",
         });
       }
     },
@@ -76,21 +74,23 @@ function Hero() {
   );
 
   useGSAP(() => {
-    gsap.set("#video-frame", {
-      clipPath: "polygon(14% 0, 72% 0, 88% 90%, 0 95%)",
-      borderRadius: "0% 0% 40% 40%",
-    });
-    gsap.from("#video-frame", {
-      clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
-      borderRadius: "0% 0% 0% 0%",
-      ease: "power1.inOut",
-      scrollTrigger: {
-        trigger: "#video-frame",
-        start: "center center",
-        end: "bottom center",
-        scrub: true,
+    gsap.fromTo(
+      "#video-frame",
+      {
+        clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+        borderRadius: "0% 0% 0% 0%",
       },
-    });
+      {
+        clipPath: "polygon(14% 0, 72% 0, 88% 90%, 0 85%)",
+        borderRadius: "0% 0% 45% 20%",
+        scrollTrigger: {
+          trigger: "#video-frame",
+          start: "center center",
+          end: "bottom center",
+          scrub: true,
+        },
+      },
+    );
   });
 
   return (
@@ -106,13 +106,12 @@ function Hero() {
         className="bg-blue-75 relative z-10 h-dvh w-screen overflow-hidden rounded-lg"
       >
         <div>
-          <div className="mask-clip-path absolute-center z-50 size-64 cursor-pointer overflow-hidden rounded-lg">
+          <div className="mask-clip-path absolute-center z-50 size-64 cursor-pointer overflow-hidden rounded-lg border-none">
             <div
               onClick={handleMiniVideoClick}
               className="origin-center scale-50 opacity-0 transition-all duration-250 ease-in hover:scale-100 hover:opacity-100"
             >
               <video
-                ref={nextVideoRef}
                 src={getVideoSrc(upcomingVideo)}
                 loop
                 muted
@@ -129,7 +128,7 @@ function Hero() {
             loop
             muted
             id="next-video"
-            className="absolute-center invisible z-20 size-64 rounded-lg object-cover object-center"
+            className="absolute-center invisible z-20 size-64 rounded-lg border-2 border-black object-cover object-center"
             onLoadedData={handleVideoLoad}
           />
           <video
