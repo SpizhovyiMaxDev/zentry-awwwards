@@ -13,7 +13,7 @@ function AnimatedTitle({ title, containerClass }: AnimatedTitleProps) {
   useEffect(function () {
     const container = containerRef.current;
     if (!container) return;
-    const ctx = gsap.context(() => {}, containerRef);
+    const ctx = gsap.context(() => {}, container);
     const titleAnimaton = gsap.timeline({
       scrollTrigger: {
         trigger: container,

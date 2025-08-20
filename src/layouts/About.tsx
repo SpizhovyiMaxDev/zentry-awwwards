@@ -2,6 +2,7 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import AnimatedTitle from "../ui/AnimatedTitle";
+import AnimatedSubheading from "../ui/AnimatedSubheading";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -12,7 +13,7 @@ function About() {
         trigger: "#clip",
         start: "center center",
         end: "+=800 center",
-        scrub: 1,
+        scrub: 0.5,
         pin: true,
       },
     });
@@ -30,9 +31,7 @@ function About() {
   return (
     <div id="about" className="min-h-screen w-screen overflow-x-hidden">
       <div className="relative mt-36 mb-8 flex flex-col items-center gap-5">
-        <p className="font-general text-sm uppercase md:text-[10px]">
-          Welcome to Zentry
-        </p>
+        <AnimatedSubheading subHeading="Welcome to Zentry" />
 
         <AnimatedTitle
           title="Disc<b>o</b>ver the world's <br /> largest shared <b>a</b>dventure"
