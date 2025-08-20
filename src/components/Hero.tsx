@@ -47,7 +47,7 @@ function Hero() {
   useGSAP(
     function () {
       if (hasClicked && nextVideoRef.current) {
-        gsap.set("#next-video", { visibility: "visible", border: "none" });
+        gsap.set("#next-video", { visibility: "visible" });
         gsap.to("#next-video", {
           transformOrigin: "center center",
           scale: 1,
@@ -78,11 +78,9 @@ function Hero() {
       "#video-frame",
       {
         clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
-        borderRadius: "0% 0% 0% 0%",
       },
       {
-        clipPath: "polygon(14% 0, 72% 0, 88% 90%, 0 85%)",
-        borderRadius: "0% 0% 45% 20%",
+        clipPath: "polygon(14% 0, 72% 0, 90% 90%, 8% 85%)",
         scrollTrigger: {
           trigger: "#video-frame",
           start: "center center",
@@ -128,7 +126,7 @@ function Hero() {
             loop
             muted
             id="next-video"
-            className="absolute-center invisible z-20 size-64 rounded-lg border-2 border-black object-cover object-center"
+            className="absolute-center invisible z-20 size-64 rounded-lg object-cover object-center"
             onLoadedData={handleVideoLoad}
           />
           <video
