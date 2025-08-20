@@ -1,3 +1,4 @@
+import { useGSAP } from "@gsap/react";
 import clsx from "clsx";
 
 interface AnimatedTitleProps {
@@ -6,6 +7,8 @@ interface AnimatedTitleProps {
 }
 
 function AnimatedTitle({ title, containerClass }: AnimatedTitleProps) {
+  useGSAP(function () {});
+
   return (
     <div
       className={clsx(

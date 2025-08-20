@@ -20,6 +20,8 @@ function About() {
     clipAnimation.to("#about-image-wrapper", {
       width: "100vw",
       height: "100vh",
+      top: 0,
+      border: 0,
       borderRadius: 0,
     });
   });
@@ -37,10 +39,10 @@ function About() {
         />
       </div>
 
-      <div className="relative h-dvh w-screen" id="clip">
+      <div className="relative flex h-dvh w-screen" id="clip">
         <div
           id="about-image-wrapper"
-          className="absolute top-0 left-1/2 z-25 h-[50vh] w-[15rem] -translate-x-1/2 overflow-hidden rounded-lg border-2 border-black md:h-[45vh] md:w-[20rem] lg:h-[60vh] lg:w-[30rem]"
+          className="absolute top-0 left-1/2 z-25 h-[50vh] w-[85vw] -translate-x-1/2 overflow-hidden rounded-lg border-2 border-black lg:h-[55vh] lg:w-[30rem]"
         >
           <img
             src="img/about.webp"
@@ -49,7 +51,7 @@ function About() {
           />
         </div>
 
-        <div className="sm:text-md font-circular-web absolute bottom-[1rem] left-1/2 w-full max-w-[40rem] -translate-x-1/2 px-4 text-center text-xl md:top-[52vh] lg:top-[72vh]">
+        <div className="sm:text-md font-circular-web absolute left-1/2 mt-[55vh] w-full max-w-[40rem] -translate-x-1/2 px-4 text-center text-xl lg:mt-[72vh]">
           <p>The Game of Games begins—your life, now an epic MMORPG</p>
           <p className="text-gray-500">
             Zentry unites every player from countless games and platforms, both
