@@ -10,6 +10,7 @@ function Navbar() {
   const [isAudioPlaying, setIsAudioPlaying] = useState<boolean>(false);
   const navContainerRef = useRef<HTMLDivElement | null>(null);
   const audioRef = useRef<HTMLAudioElement | null>(null);
+
   const { y: currScrollY } = useWindowScroll();
   const [lastScrollY, setLastScrollY] = useState<number>(0);
   const [isNavVisible, setIsNavVisible] = useState<boolean>(true);
