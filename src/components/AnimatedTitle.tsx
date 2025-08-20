@@ -1,5 +1,6 @@
-import { useGSAP } from "@gsap/react";
 import clsx from "clsx";
+import gsap from "gsap";
+import { useEffect, useRef } from "react";
 
 interface AnimatedTitleProps {
   title: string;
@@ -7,33 +8,47 @@ interface AnimatedTitleProps {
 }
 
 function AnimatedTitle({ title, containerClass }: AnimatedTitleProps) {
-  useGSAP(function () {});
+  const containerRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(function () {
+    const container = containerRef.current;
+    if (!container) return;
+    const ctx = gsap.context(() => {}, containerRef);
+    const titleAnimaton = gsap.timeline({
+      scrollTrigger: {
+        trigger: container,
+        start: "100 bottom",
+        end: "100 bottom",
+        toggleActions: "play none none reverse",
+      },
+    });
+
+    titleAnimaton.to(".animated-word", {
+      opacity: 1,
+      transform: "translate3d(0,0,0) rotateY(0deg) rotateX(0deg)",
+      ease: "power2.inOut",
+      stagger: 0.05,
+    });
+
+    return () => ctx.revert();
+  }, []);
 
   return (
-    <div
-      className={clsx(
-        containerClass,
-        "mt-5 text-center text-4xl leading-[0.8] uppercase md:text-[6rem]",
-      )}
-    >
-      {title.split("<br/>").map((line, i) => {
-        return (
-          <div
-            key={i}
-            className="flex-center max-w-fullflex-wrap gap-2 p-10 md:gap-3"
-          >
-            {line.split(" ").map((word, i) => {
-              return (
-                <span
-                  key={i}
-                  className="animated-word"
-                  dangerouslySetInnerHTML={{ __html: word }}
-                />
-              );
-            })}
-          </div>
-        );
-      })}
+    <div ref={containerRef} className={clsx("animated-title", containerClass)}>
+      {title.split("<br />").map((line, index) => (
+        <div
+          key={index}
+          className="flex-center max-w-full flex-wrap gap-2 px-10 md:gap-3"
+        >
+          {line.split(" ").map((word, idx) => (
+            <span
+              key={idx}
+              className="animated-word"
+              dangerouslySetInnerHTML={{ __html: word }}
+            />
+          ))}
+        </div>
+      ))}
     </div>
   );
 }
