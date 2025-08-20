@@ -1,5 +1,5 @@
-import About from "./components/About";
-import Hero from "./components/Hero";
+import About from "./layouts/About";
+import Hero from "./layouts/Hero";
 
 function App() {
   return (

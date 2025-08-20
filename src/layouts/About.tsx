@@ -1,7 +1,7 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
-import AnimatedTitle from "./AnimatedTitle";
+import AnimatedTitle from "../ui/AnimatedTitle";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -11,7 +11,7 @@ function About() {
       scrollTrigger: {
         trigger: "#clip",
         start: "center center",
-        // end: "+=800 center",
+        end: "+=800 center",
         scrub: 1,
         pin: true,
       },
@@ -20,6 +20,7 @@ function About() {
     clipAnimation.to("#about-image-wrapper", {
       width: "100vw",
       height: "100vh",
+      maxWidth: "auto",
       top: 0,
       border: 0,
       borderRadius: 0,
@@ -39,10 +40,10 @@ function About() {
         />
       </div>
 
-      <div className="relative flex h-dvh w-screen" id="clip">
+      <div className="relative flex h-dvh w-screen flex-col" id="clip">
         <div
           id="about-image-wrapper"
-          className="absolute top-0 left-1/2 z-25 h-[50vh] w-[85vw] -translate-x-1/2 overflow-hidden rounded-lg border-2 border-black lg:h-[55vh] lg:w-[30rem]"
+          className="absolute top-0 left-1/2 z-25 h-[50vh] w-[85vw] -translate-x-1/2 overflow-hidden rounded-lg border-2 border-black sm:w-[30rem] lg:h-[55vh]"
         >
           <img
             src="img/about.webp"
@@ -51,7 +52,7 @@ function About() {
           />
         </div>
 
-        <div className="sm:text-md font-circular-web absolute left-1/2 mt-[55vh] w-full max-w-[40rem] -translate-x-1/2 px-4 text-center text-xl lg:mt-[72vh]">
+        <div className="sm:text-md font-circular-web absolute left-1/2 mt-[55vh] w-full max-w-[45rem] -translate-x-1/2 px-10 text-center text-xl lg:mt-[62vh]">
           <p>The Game of Games begins—your life, now an epic MMORPG</p>
           <p className="text-gray-500">
             Zentry unites every player from countless games and platforms, both

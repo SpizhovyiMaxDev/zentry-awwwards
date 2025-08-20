@@ -1,10 +1,10 @@
 import { useEffect, useRef, useState } from "react";
-import Button from "./Button";
+import Button from "../ui/Button";
 import { TiLocationArrow } from "react-icons/ti";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import Loader from "./Loader";
 import { ScrollTrigger } from "gsap/all";
+import Loader from "./Loader";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -133,7 +133,7 @@ function Hero() {
             src={getVideoSrc(bgIndex)}
             loop
             muted
-            autoPlay
+            // autoPlay
             className="absolute top-0 left-0 size-full object-cover object-center"
             onLoadedData={handleVideoLoad}
           />
