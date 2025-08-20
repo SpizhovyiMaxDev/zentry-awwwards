@@ -104,7 +104,7 @@ function Hero() {
         className="bg-blue-75 relative z-10 h-dvh w-screen overflow-hidden rounded-lg"
       >
         <div>
-          <div className="mask-clip-path absolute-center z-50 size-64 cursor-pointer overflow-hidden rounded-lg border-none">
+          <div className="absolute-center z-40 size-64 cursor-pointer overflow-hidden rounded-lg border-none">
             <div
               onClick={handleMiniVideoClick}
               className="origin-center scale-50 opacity-0 transition-all duration-250 ease-in hover:scale-100 hover:opacity-100"
@@ -133,7 +133,7 @@ function Hero() {
             src={getVideoSrc(bgIndex)}
             loop
             muted
-            // autoPlay
+            autoPlay
             className="absolute top-0 left-0 size-full object-cover object-center"
             onLoadedData={handleVideoLoad}
           />
@@ -143,7 +143,7 @@ function Hero() {
           G<b>a</b>ming
         </h1>
 
-        <div className="absolute top-0 left-0 z-40 size-full">
+        <div className="absolute top-0 left-0 z-30 size-full">
           <div className="mt-24 px-5 text-blue-100 sm:px-10">
             <h1 className="special-font hero-heading">
               redefi<b>n</b>e
