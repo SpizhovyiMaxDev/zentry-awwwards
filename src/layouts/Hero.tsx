@@ -53,6 +53,7 @@ function Hero() {
           scale: 1,
           width: "100%",
           height: "100%",
+          borderRadius: "0",
           duration: 0.75,
           onStart: () => {
             nextVideoRef.current?.play();
@@ -101,7 +102,7 @@ function Hero() {
 
       <div
         id="video-frame"
-        className="bg-blue-75 relative z-10 h-dvh w-full overflow-hidden rounded-lg"
+        className="bg-blue-75 relative z-10 h-dvh w-full overflow-hidden"
       >
         <div>
           <div className="absolute-center z-40 size-64 cursor-pointer overflow-hidden rounded-lg border-none">
@@ -129,15 +130,16 @@ function Hero() {
             className="absolute-center invisible z-20 size-64 rounded-lg object-cover object-center"
             onLoadedData={handleVideoLoad}
           />
-          <video
-            src={getVideoSrc(bgIndex)}
-            loop
-            muted
-            autoPlay
-            className="absolute top-0 left-0 size-full object-cover object-center"
-            onLoadedData={handleVideoLoad}
-          />
         </div>
+
+        <video
+          src={getVideoSrc(bgIndex)}
+          loop
+          muted
+          autoPlay
+          className="absolute top-0 left-0 size-full object-cover object-center"
+          onLoadedData={handleVideoLoad}
+        />
 
         <h1 className="special-font hero-heading text-blue-75 absolute right-5 bottom-5 z-40">
           G<b>a</b>ming
