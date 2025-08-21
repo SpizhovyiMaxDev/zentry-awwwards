@@ -29,7 +29,7 @@ function About() {
   });
 
   return (
-    <div id="about" className="min-h-screen w-screen overflow-x-hidden">
+    <div id="about" className="min-h-screen w-screen overflow-hidden">
       <div className="relative mt-36 mb-8 flex flex-col items-center gap-5">
         <AnimatedSubheading subHeading="Welcome to Zentry" />
 

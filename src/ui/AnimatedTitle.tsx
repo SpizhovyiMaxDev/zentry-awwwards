@@ -13,22 +13,23 @@ function AnimatedTitle({ title, containerClass }: AnimatedTitleProps) {
   useEffect(function () {
     const container = containerRef.current;
     if (!container) return;
-    const ctx = gsap.context(() => {}, container);
-    const titleAnimaton = gsap.timeline({
-      scrollTrigger: {
-        trigger: container,
-        start: "100 bottom",
-        end: "100 bottom",
-        toggleActions: "play none none reverse",
-      },
-    });
+    const ctx = gsap.context(() => {
+      const titleAnimaton = gsap.timeline({
+        scrollTrigger: {
+          trigger: container,
+          start: "100 bottom",
+          end: "100 bottom",
+          toggleActions: "play none none reverse", // onEnter | onLeave | onEnterBack | onLeaveBack
+        },
+      });
 
-    titleAnimaton.to(".animated-word", {
-      opacity: 1,
-      transform: "translate3d(0,0,0) rotateY(0deg) rotateX(0deg)",
-      ease: "power2.inOut",
-      stagger: 0.05,
-    });
+      titleAnimaton.to(".animated-word", {
+        opacity: 1,
+        transform: "translate3d(0,0,0) rotateY(0deg) rotateX(0deg)",
+        ease: "power2.inOut",
+        stagger: 0.05,
+      });
+    }, container);
 
     return () => ctx.revert();
   }, []);
