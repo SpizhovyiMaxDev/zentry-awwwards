@@ -5,7 +5,7 @@ import Navbar from "./layouts/Navbar";
 
 function App() {
   return (
-    <main className="relative min-h-screen w-screen overflow-x-hidden">
+    <main className="relative min-h-screen w-full overflow-x-hidden">
       <Navbar />
       <Hero />
       <About />
