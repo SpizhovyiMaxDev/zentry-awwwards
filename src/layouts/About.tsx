@@ -51,7 +51,7 @@ function About() {
           />
         </div>
 
-        <div className="sm:text-md font-circular-web absolute left-1/2 mt-[55vh] w-full max-w-[45rem] -translate-x-1/2 px-10 text-center text-xl lg:mt-[62vh]">
+        <div className="text-md font-circular-web text-md absolute left-1/2 mt-[55vh] w-full max-w-[45rem] -translate-x-1/2 px-10 text-center lg:mt-[62vh] lg:text-xl">
           <p>The Game of Games begins—your life, now an epic MMORPG</p>
           <p className="text-gray-500">
             Zentry unites every player from countless games and platforms, both
