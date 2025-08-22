@@ -19,8 +19,8 @@ function About() {
     });
 
     clipAnimation.to("#about-image-wrapper", {
-      width: "100dvw",
-      height: "100dvh",
+      width: "100vw",
+      height: "100vh",
       maxWidth: "auto",
       top: 0,
       border: 0,
@@ -29,7 +29,7 @@ function About() {
   });
 
   return (
-    <div id="about" className="min-h-dvh w-full overflow-hidden">
+    <div id="about" className="min-h-vh w-full overflow-hidden">
       <div className="relative mt-36 mb-8 flex flex-col items-center gap-5">
         <AnimatedSubheading subHeading="Welcome to Zentry" />
 
