@@ -40,8 +40,8 @@ function FeaturedCard({
     <div
       className={clsx(
         containerClass,
-        `relative flex cursor-grab flex-col justify-between gap-2 overflow-hidden rounded-md border border-white/20 ${
-          isComingSoon ? "bg-violet-300" : ""
+        `feature-card relative flex cursor-grab flex-col justify-between gap-2 overflow-hidden rounded-md border border-white/20 ${
+          isComingSoon ? "bg-violet-300" : "bg-black"
         }`,
       )}
       onMouseEnter={handleMouseEnter}

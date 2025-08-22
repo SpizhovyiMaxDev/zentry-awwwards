@@ -1,8 +1,41 @@
+// import { useGSAP } from "@gsap/react";
 import FeaturedCard from "../ui/FeaturedCard";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/all";
+
+gsap.registerPlugin(ScrollTrigger);
 
 function Features() {
+  // useGSAP(() => {
+  //   gsap.utils.toArray<HTMLDivElement>(".feature-card").forEach((card) => {
+  //     gsap.fromTo(
+  //       card,
+  //       {
+  //         opacity: 0,
+  //         y: 100,
+  //         rotateX: -60,
+  //         transformPerspective: 1000,
+  //         transformOrigin: "center bottom",
+  //       },
+  //       {
+  //         opacity: 1,
+  //         y: 0,
+  //         rotateX: 0,
+  //         duration: 1.2,
+  //         ease: "power2.out",
+  //         scrollTrigger: {
+  //           trigger: card,
+  //           start: "top 85%",
+  //           end: "top 85%",
+  //           toggleActions: "play none none reverse",
+  //         },
+  //       },
+  //     );
+  //   });
+  // });
+
   return (
-    <section className="bg-black py-32">
+    <section className="overflow-hidden bg-black py-32">
       <div className="mx-auto max-w-[95rem] px-4.5 lg:px-7">
         <div className="mb-32 max-w-[33.5rem]">
           <p className="font-circular-web text-lg text-blue-50">
