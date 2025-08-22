@@ -1,4 +1,3 @@
-import { useGSAP } from "@gsap/react";
 import clsx from "clsx";
 import gsap from "gsap";
 import { useEffect, useRef } from "react";

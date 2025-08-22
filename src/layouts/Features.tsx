@@ -18,48 +18,47 @@ function Features() {
         <div className="grid grid-cols-2 gap-7">
           <FeaturedCard
             title="Radiant"
-            description="A cross-platform metagame app, turning your activities across Web2
-            and Web3 games into a rewarding adventure."
-            bgVideoSrc="/videos/feature-1.mp4"
+            description="A cross-platform metagame app, turning your activities across Web2 and Web3 games into a rewarding adventure."
             containerClass="min-h-[30rem] col-span-2 row-span-1"
+            bgVideoSrc="/videos/feature-1.mp4"
             videoClass="object-left"
           />
 
           <FeaturedCard
             title="Zigma"
             description="An anime and gaming-inspired NFT collection - the IP primed for expansion."
+            containerClass="row-span-1 aspect-[6/10] ml-[15vw] sm:ml-0  col-span-2 row-span-1 sm:col-span-1 sm:row-span-2"
             bgVideoSrc="/videos/feature-2.mp4"
             videoClass="object-top size-full"
-            containerClass="row-span-1 aspect-[6/10] ml-[15vw] sm:ml-0  col-span-2 row-span-1 sm:col-span-1 sm:row-span-2"
           />
 
           <FeaturedCard
             title="Nexus"
             description="A gamified social hub, adding a new dimension of play to social interaction for Web3 communities."
+            containerClass="mr-[20dvw] sm:mr-0 row-span-1 col-span-2 row-span-1 sm:col-span-1 sm:row-span-1 aspect-[3/3] sm:aspect-auto"
             bgVideoSrc="/videos/feature-3.mp4"
             videoClass="object-center size-full"
-            containerClass="mr-[20dvw] sm:mr-0 row-span-1 col-span-2 row-span-1 sm:col-span-1 sm:row-span-1 aspect-[3/3] sm:aspect-auto"
           />
 
           <FeaturedCard
             title="Azul"
             description="Cross-world AI Agent - elevating your gameplay to be more fun and productive."
+            containerClass="row-span-1 col-span-2 row-span-1 sm:col-span-1 sm:row-span-1 ml-[15vw] aspect-[3/3] sm:ml-0 sm:aspect-auto"
             bgVideoSrc="/videos/feature-4.mp4"
-            videoClass="object-bottom sm:object-top size-full"
-            containerClass="row-span-1   col-span-2 row-span-1 sm:col-span-1 sm:row-span-1 ml-[15vw] aspect-[3/3] sm:ml-0 sm:aspect-auto"
+            videoClass="object-top size-full"
           />
 
           <FeaturedCard
             title="More Coming Soon!"
-            videoClass="object-center size-full"
             containerClass="row-span-1 col-span-2 row-span-1 sm:col-span-1 sm:row-span-1 sm:mr-0  mr-[35dvw]"
+            videoClass="object-center size-full"
             isComingSoon={true}
           />
 
           <FeaturedCard
             bgVideoSrc="/videos/feature-5.mp4"
+            containerClass="row-span-1  min-h-[15rem] col-span-2 row-span-1 sm:col-span-1 sm:row-span-1 ml-[25dvw] sm:ml-0"
             videoClass="object-center size-full"
-            containerClass="row-span-1  min-h-[15rem]  col-span-2 row-span-1 sm:col-span-1 sm:row-span-1 ml-[25dvw] sm:ml-0"
             playVideo={true}
           />
         </div>
