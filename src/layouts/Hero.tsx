@@ -55,7 +55,6 @@ function Hero() {
           height: "100%",
           borderRadius: "0",
           duration: 0.75,
-          top: window.innerWidth < 640 ? 0 : "auto",
           onStart: () => {
             nextVideoRef.current?.play();
           },
@@ -128,7 +127,7 @@ function Hero() {
             loop
             muted
             id="next-video"
-            className="invisible absolute top-[60%] left-1/2 z-20 -translate-x-1/2 rounded-lg object-cover object-center sm:top-1/2 sm:size-44 sm:-translate-y-1/2 lg:size-64"
+            className="invisible absolute top-1/2 left-1/2 z-20 size-64 -translate-x-1/2 -translate-y-1/2 rounded-lg object-cover object-center"
             onLoadedData={handleVideoLoad}
           />
         </div>
