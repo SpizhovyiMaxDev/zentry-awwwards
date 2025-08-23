@@ -13,7 +13,7 @@ function About() {
         trigger: "#clip",
         start: "top top",
         end: "+=800 center",
-        scrub: 0.5,
+        scrub: 1,
         pin: true,
       },
     });
@@ -29,7 +29,7 @@ function About() {
   });
 
   return (
-    <div id="about" className="min-h-vh w-full overflow-hidden">
+    <div id="about" className="min-h-dvh w-full overflow-hidden">
       <div className="relative mt-36 mb-8 flex flex-col items-center gap-5">
         <AnimatedSubheading subHeading="Welcome to Zentry" />
 
