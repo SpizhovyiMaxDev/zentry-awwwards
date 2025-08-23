@@ -57,6 +57,10 @@ body {
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
   }
 
+  .absolute-below-center {
+    @apply absolute top-[60%] left-1/2 -translate-x-1/2;
+  }
+
   .absolute-center {
     @apply absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2;
   }

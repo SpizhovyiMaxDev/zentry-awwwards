@@ -105,17 +105,17 @@ function Hero() {
         className="bg-blue-75 relative z-10 h-dvh w-full overflow-hidden"
       >
         <div>
-          <div className="absolute-center z-40 size-64 cursor-pointer overflow-hidden rounded-lg border-none">
+          <div className="absolute top-[60%] left-1/2 z-40 size-25 -translate-x-1/2 cursor-pointer overflow-hidden rounded-lg border-none sm:top-1/2 sm:size-44 sm:-translate-y-1/2 lg:size-64">
             <div
               onClick={handleMiniVideoClick}
-              className="origin-center scale-50 opacity-0 transition-all duration-250 ease-in hover:scale-100 hover:opacity-100"
+              className="transition-all duration-250 ease-in hover:scale-100 hover:opacity-100 md:scale-50 md:opacity-0"
             >
               <video
                 src={getVideoSrc(upcomingVideo)}
                 loop
                 muted
                 id="current-video"
-                className="size-64 origin-center scale-150 object-cover object-center"
+                className="size-25 origin-center scale-150 object-cover object-center sm:size-44 lg:size-64"
                 onLoadedData={handleVideoLoad}
               />
             </div>
