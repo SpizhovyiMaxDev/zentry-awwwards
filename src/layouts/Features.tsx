@@ -1,4 +1,4 @@
-// import { useGSAP } from "@gsap/react";
+import { useGSAP } from "@gsap/react";
 import FeaturedCard from "../ui/FeaturedCard";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
@@ -6,33 +6,33 @@ import { ScrollTrigger } from "gsap/all";
 gsap.registerPlugin(ScrollTrigger);
 
 function Features() {
-  // useGSAP(() => {
-  //   gsap.utils.toArray<HTMLDivElement>(".feature-card").forEach((card) => {
-  //     gsap.fromTo(
-  //       card,
-  //       {
-  //         opacity: 0,
-  //         y: 100,
-  //         rotateX: -60,
-  //         transformPerspective: 1000,
-  //         transformOrigin: "center bottom",
-  //       },
-  //       {
-  //         opacity: 1,
-  //         y: 0,
-  //         rotateX: 0,
-  //         duration: 1.2,
-  //         ease: "power2.out",
-  //         scrollTrigger: {
-  //           trigger: card,
-  //           start: "top 85%",
-  //           end: "top 85%",
-  //           toggleActions: "play none none reverse",
-  //         },
-  //       },
-  //     );
-  //   });
-  // });
+  useGSAP(() => {
+    gsap.utils.toArray<HTMLDivElement>(".feature-card").forEach((card) => {
+      gsap.fromTo(
+        card,
+        {
+          y: 30,
+          rotateX: -10,
+          opacity: 0,
+        },
+        {
+          rotateX: 0,
+          y: 0,
+          duration: 1,
+          transformPerspective: 1000,
+          transformOrigin: "center top",
+          opacity: 1,
+          ease: "power2.inOut",
+          scrollTrigger: {
+            trigger: card,
+            start: "top bottom",
+            end: "top bottom",
+            toggleActions: "play none none reverse",
+          },
+        },
+      );
+    });
+  });
 
   return (
     <section className="overflow-hidden bg-black py-32">
