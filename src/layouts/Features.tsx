@@ -16,17 +16,17 @@ function Features() {
           opacity: 0,
         },
         {
+          duration: 1.5,
           rotateX: 0,
           y: 0,
-          duration: 1,
-          transformPerspective: 1000,
+          transformPerspective: 5000,
           transformOrigin: "center top",
           opacity: 1,
           ease: "power2.inOut",
           scrollTrigger: {
             trigger: card,
-            start: "top bottom",
-            end: "top bottom",
+            start: "top 90%",
+            end: "top 90%",
             toggleActions: "play none none reverse",
           },
         },
@@ -36,7 +36,7 @@ function Features() {
 
   return (
     <section className="overflow-hidden bg-black py-32">
-      <div className="mx-auto max-w-[95rem] px-4.5 lg:px-7">
+      <div className="mx-auto max-w-[95rem] px-7.5 lg:px-14">
         <div className="mb-32 max-w-[33.5rem]">
           <p className="font-circular-web text-lg text-blue-50">
             Inot Metagame Layer
@@ -48,11 +48,11 @@ function Features() {
           </p>
         </div>
 
-        <div className="grid grid-cols-2 gap-7">
+        <div className="grid grid-cols-2 gap-7.5 lg:gap-14">
           <FeaturedCard
             title="Radiant"
             description="A cross-platform metagame app, turning your activities across Web2 and Web3 games into a rewarding adventure."
-            containerClass="min-h-[30rem] lg:h-[65vh] col-span-2 row-span-1"
+            containerClass="h-[30rem] lg:h-[65vh] col-span-2 row-span-1"
             bgVideoSrc="/videos/feature-1.mp4"
             videoClass="object-left"
           />
@@ -68,7 +68,7 @@ function Features() {
           <FeaturedCard
             title="Nexus"
             description="A gamified social hub, adding a new dimension of play to social interaction for Web3 communities."
-            containerClass="mr-[20dvw] sm:mr-0 row-span-1 col-span-2 row-span-1 sm:col-span-1 sm:row-span-1 aspect-[3/3] sm:aspect-auto"
+            containerClass="row-span-1 col-span-2 row-span-1 sm:col-span-1 sm:row-span-1 mr-[15vw] sm:mr-0 aspect-[3/3]  sm:aspect-auto"
             bgVideoSrc="/videos/feature-3.mp4"
             videoClass="object-center size-full"
           />
@@ -76,7 +76,7 @@ function Features() {
           <FeaturedCard
             title="Azul"
             description="Cross-world AI Agent - elevating your gameplay to be more fun and productive."
-            containerClass="row-span-1 col-span-2 row-span-1 sm:col-span-1 sm:row-span-1 ml-[15vw] aspect-[3/3] sm:ml-0 sm:aspect-auto"
+            containerClass="row-span-1 col-span-2 row-span-1 sm:col-span-1 sm:row-span-1 ml-[15vw] sm:ml-0 aspect-[3/3]  sm:aspect-auto"
             bgVideoSrc="/videos/feature-4.mp4"
             videoClass="object-top size-full"
           />
