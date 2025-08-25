@@ -9,12 +9,12 @@ import Loader from "./Loader";
 gsap.registerPlugin(ScrollTrigger);
 
 function Hero() {
-  const [currIndex, setCurrIntex] = useState<number>(1);
-  const [bgIndex, setBgIndex] = useState<number>(1);
-  const [hasClicked, setHasClicked] = useState<boolean>(false);
-  const [isLoading, setIsLoading] = useState<boolean>(true);
-  const [disableClick, setDisableClick] = useState<boolean>(false);
-  const [loadedVideos, setLoadedVideos] = useState<number>(0);
+  const [currIndex, setCurrIntex] = useState(1);
+  const [bgIndex, setBgIndex] = useState(1);
+  const [hasClicked, setHasClicked] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
+  const [disableClick, setDisableClick] = useState(false);
+  const [loadedVideos, setLoadedVideos] = useState(0);
 
   const nextVideoRef = useRef<HTMLVideoElement | null>(null);
 
