@@ -8,7 +8,7 @@ interface ParallaxSettings {
   resetOnLeave?: boolean;
 }
 
-export function useParallaxEffect<T extends HTMLElement = HTMLElement>(
+export function useParallaxEffect<T extends HTMLElement>(
   settings: ParallaxSettings,
 ) {
   const containerRef = useRef<HTMLDivElement | null>(null);
