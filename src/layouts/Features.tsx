@@ -1,39 +1,9 @@
-import { useGSAP } from "@gsap/react";
 import FeaturedCard from "../ui/FeaturedCard";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/all";
 import { FEATURE_CARDS } from "../data/features";
-
-gsap.registerPlugin(ScrollTrigger);
+import { useFeatureCardsScrollAnimation } from "../hooks/useFeatureCardsScrollAnimation";
 
 function Features() {
-  useGSAP(() => {
-    gsap.utils.toArray<HTMLDivElement>(".feature-card").forEach((card) => {
-      gsap.fromTo(
-        card,
-        {
-          y: 30,
-          rotateX: -10,
-          opacity: 0,
-        },
-        {
-          duration: 1.5,
-          rotateX: 0,
-          y: 0,
-          transformPerspective: 5000,
-          transformOrigin: "center top",
-          opacity: 1,
-          ease: "power2.inOut",
-          scrollTrigger: {
-            trigger: card,
-            start: "top 90%",
-            end: "top 90%",
-            toggleActions: "play none none reverse",
-          },
-        },
-      );
-    });
-  });
+  useFeatureCardsScrollAnimation();
 
   return (
     <section className="overflow-hidden bg-black py-32">
