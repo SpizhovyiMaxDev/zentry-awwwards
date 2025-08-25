@@ -3,30 +3,12 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import AnimatedTitle from "../ui/AnimatedTitle";
 import AnimatedSubheading from "../ui/AnimatedSubheading";
+import { useAboutScrollAnimation } from "../hooks/useAboutScrollAnimation";
 
 gsap.registerPlugin(ScrollTrigger);
 
 function About() {
-  useGSAP(() => {
-    const clipAnimation = gsap.timeline({
-      scrollTrigger: {
-        trigger: "#clip",
-        start: "top top",
-        end: "+=800 center",
-        scrub: 1,
-        pin: true,
-      },
-    });
-
-    clipAnimation.to("#about-image-wrapper", {
-      width: "100vw",
-      height: "100vh",
-      maxWidth: "auto",
-      top: 0,
-      border: 0,
-      borderRadius: 0,
-    });
-  });
+  useAboutScrollAnimation();
 
   return (
     <div id="about" className="min-h-dvh w-full overflow-hidden">
