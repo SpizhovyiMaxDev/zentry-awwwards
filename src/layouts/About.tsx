@@ -1,10 +1,6 @@
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/all";
 import AnimatedTitle from "../ui/AnimatedTitle";
 import AnimatedSubheading from "../ui/AnimatedSubheading";
 import { useAboutScrollAnimation } from "../hooks/useAboutScrollAnimation";
-
-gsap.registerPlugin(ScrollTrigger);
 
 function About() {
   useAboutScrollAnimation();
