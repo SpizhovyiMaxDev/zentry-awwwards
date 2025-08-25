@@ -5,6 +5,7 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import Loader from "./Loader";
+import { useHeroVideoClickAnimation } from "../hooks/useHeroVideClickAnimation";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -44,34 +45,12 @@ function Hero() {
     [loadedVideos],
   );
 
-  useGSAP(
-    function () {
-      if (hasClicked && nextVideoRef.current) {
-        gsap.set("#next-video", { visibility: "visible" });
-        gsap.to("#next-video", {
-          transformOrigin: "center center",
-          scale: 1,
-          width: "100%",
-          height: "100%",
-          borderRadius: "0",
-          duration: 0.75,
-          onStart: () => {
-            nextVideoRef.current?.play();
-          },
-          onComplete: () => {
-            setBgIndex(currIndex);
-            setDisableClick(false);
-          },
-        });
-
-        gsap.from("#current-video", {
-          transformOrigin: "center center",
-          scale: 0,
-          duration: 0.75,
-        });
-      }
-    },
-    { dependencies: [currIndex], revertOnUpdate: true },
+  useHeroVideoClickAnimation(
+    hasClicked,
+    nextVideoRef,
+    currIndex,
+    setBgIndex,
+    setDisableClick,
   );
 
   useGSAP(() => {
