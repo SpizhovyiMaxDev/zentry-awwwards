@@ -7,13 +7,13 @@ import gsap from "gsap";
 const navItems: string[] = ["Nexus", "Valut", "Prologue", "About", "Contact"];
 
 function Navbar() {
-  const [isAudioPlaying, setIsAudioPlaying] = useState<boolean>(false);
+  const [isAudioPlaying, setIsAudioPlaying] = useState(false);
   const navContainerRef = useRef<HTMLDivElement | null>(null);
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
   const { y: currScrollY } = useWindowScroll();
-  const [lastScrollY, setLastScrollY] = useState<number>(0);
-  const [isNavVisible, setIsNavVisible] = useState<boolean>(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+  const [isNavVisible, setIsNavVisible] = useState(true);
 
   function toggleAudioIndicator() {
     setIsAudioPlaying((playing) => !playing);
