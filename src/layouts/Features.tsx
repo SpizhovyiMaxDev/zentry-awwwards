@@ -10,7 +10,7 @@ function Features() {
       <div className="mx-auto max-w-[95rem] px-7.5 lg:px-14">
         <div className="mb-32 max-w-[33.5rem]">
           <p className="font-circular-web text-lg text-blue-50">
-            Inot Metagame Layer
+            Into the Metagame Layer
           </p>
           <p className="font-circular-web text-lg text-blue-50 opacity-50">
             Immerse yourself in a rich and ever-expanding universe where a
