@@ -4,9 +4,9 @@ import AnimatedTitle from "../ui/AnimatedTitle";
 
 function Story() {
   const { containerRef, targetRef, handleMouseMove, handleMouseLeave } =
-    useParallaxEffect({
-      tiltX: 24,
-      tiltY: -24,
+    useParallaxEffect<HTMLImageElement>({
+      tiltX: 8,
+      tiltY: -8,
       perspective: 1200,
       resetOnLeave: true,
     });
@@ -30,13 +30,13 @@ function Story() {
 
           <div className="w-full">
             <div
-              ref={targetRef}
               className="mx-auto mt-[-10%] w-full max-w-[120rem]"
               style={{
                 clipPath: "polygon(23% 10%, 75% 20%, 85% 58%, 20% 90%)",
               }}
             >
               <img
+                ref={targetRef}
                 src="/img/entrance.webp"
                 alt="story-img"
                 className="pointer-events-none inline-block size-full"

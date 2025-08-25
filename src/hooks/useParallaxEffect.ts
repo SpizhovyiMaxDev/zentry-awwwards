@@ -1,16 +1,18 @@
 import { useRef, type MouseEvent } from "react";
 
 interface ParallaxSettings {
-  tiltX: number; // Maximum tilt in degrees for X axis
-  tiltY: number; // Maximum tilt in degrees for Y axis
-  perspective: number; // CSS perspective value
-  transitionDuration?: number; // CSS transition duration in ms
-  resetOnLeave?: boolean; // Whether to reset transform on mouse leave
+  tiltX: number;
+  tiltY: number;
+  perspective: number;
+  transitionDuration?: number;
+  resetOnLeave?: boolean;
 }
 
-export function useParallaxEffect(settings: ParallaxSettings) {
+export function useParallaxEffect<T extends HTMLElement = HTMLElement>(
+  settings: ParallaxSettings,
+) {
   const containerRef = useRef<HTMLDivElement | null>(null);
-  const targetRef = useRef<HTMLDivElement | null>(null);
+  const targetRef = useRef<T | null>(null);
 
   function handleMouseMove(e: MouseEvent<HTMLDivElement>) {
     const container = containerRef.current;
