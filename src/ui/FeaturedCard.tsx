@@ -25,7 +25,7 @@ function FeaturedCard({
   const videoRef = useRef<HTMLVideoElement | null>(null);
 
   const { containerRef, targetRef, handleMouseMove, handleMouseLeave } =
-    useParallaxEffect({
+    useParallaxEffect<HTMLDivElement>({
       tiltX: 10,
       tiltY: -10,
       perspective: 1200,

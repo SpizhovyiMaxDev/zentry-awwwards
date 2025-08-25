@@ -13,7 +13,7 @@ function AnimatedTitle({ title, containerClass }: AnimatedTitleProps) {
     <div
       ref={containerRef}
       className={clsx(
-        "flex flex-col gap-1 text-6xl leading-[.8] text-white uppercase sm:px-32 md:text-7xl md:text-[6rem]",
+        "xs:text-6xl flex flex-col gap-1 text-4xl leading-[.8] text-white uppercase sm:px-32 md:text-7xl md:text-[6rem]",
         containerClass,
       )}
     >
