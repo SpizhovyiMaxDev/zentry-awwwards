@@ -10,7 +10,13 @@ function AnimatedTitle({ title, containerClass }: AnimatedTitleProps) {
   const { containerRef } = useAnimatedTitle();
 
   return (
-    <div ref={containerRef} className={clsx("animated-title", containerClass)}>
+    <div
+      ref={containerRef}
+      className={clsx(
+        "flex flex-col gap-1 text-6xl leading-[.8] text-white uppercase sm:px-32 md:text-7xl md:text-[6rem]",
+        containerClass,
+      )}
+    >
       {title.split("<br />").map((line, index) => (
         <div
           key={index}
