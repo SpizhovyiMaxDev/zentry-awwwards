@@ -1,6 +1,7 @@
 import clsx from "clsx";
-import { useRef, type MouseEvent } from "react";
+import { useRef } from "react";
 import { TiLocationArrow } from "react-icons/ti";
+import { useParallaxEffect } from "../hooks/useParallaxEffect";
 
 interface FeaturedCardProps {
   title?: string;
@@ -21,24 +22,15 @@ function FeaturedCard({
   containerClass,
   playVideo,
 }: FeaturedCardProps) {
-  const cardRef = useRef<HTMLDivElement | null>(null);
   const videoRef = useRef<HTMLVideoElement | null>(null);
 
-  function handleMouseMove(e: MouseEvent) {
-    const card = cardRef.current;
-    if (!card) return;
-
-    const { top, left, width, height } = card.getBoundingClientRect();
-
-    const relativeX = (e.clientX - left) / width;
-    const relativeY = (e.clientY - top) / height;
-
-    const tiltX = (relativeY - 0.5) * 10;
-    const tiltY = (relativeX - 0.5) * -10;
-
-    const newTransform = `perspective(1200px) rotateX(${tiltX}deg) rotateY(${tiltY}deg)`;
-    card.style.transform = newTransform;
-  }
+  const { containerRef, targetRef, handleMouseMove, handleMouseLeave } =
+    useParallaxEffect({
+      tiltX: 10,
+      tiltY: -10,
+      perspective: 1200,
+      resetOnLeave: true,
+    });
 
   function handleMouseEnter() {
     if (videoRef.current) {
@@ -46,29 +38,30 @@ function FeaturedCard({
     }
   }
 
-  function handleMouseLeave() {
+  function handleCardMouseLeave() {
     if (videoRef.current && !playVideo) {
       videoRef.current.pause();
       videoRef.current.currentTime = 0;
     }
 
-    const newTransform = `perspective(1200px) rotateX(0deg) rotateY(0deg)`;
-    if (cardRef.current) {
-      cardRef.current.style.transform = newTransform;
-    }
+    // Call the parallax hook's mouse leave handler
+    handleMouseLeave();
   }
 
   return (
     <div className={`feature-card ${containerClass}`}>
-      <div className="size-full transition-transform duration-500 hover:scale-95">
+      <div
+        ref={containerRef}
+        className="size-full transition-transform duration-500 hover:scale-95"
+        onMouseMove={handleMouseMove}
+        onMouseLeave={handleCardMouseLeave}
+      >
         <div
-          ref={cardRef}
+          ref={targetRef}
           className={`relative flex size-full origin-center cursor-grab flex-col justify-between gap-2 overflow-hidden rounded-md border border-white/20 ${
             isComingSoon ? "bg-violet-300" : "bg-black"
           }`}
-          onMouseMove={handleMouseMove}
           onMouseEnter={handleMouseEnter}
-          onMouseLeave={handleMouseLeave}
         >
           {bgVideoSrc && (
             <video
