@@ -37,9 +37,7 @@ function FeaturedCard({
     const tiltY = (relativeX - 0.5) * -10;
 
     const newTransform = `perspective(1200px) rotateX(${tiltX}deg) rotateY(${tiltY}deg)`;
-    if (cardRef.current) {
-      cardRef.current.style.transform = newTransform;
-    }
+    card.style.transform = newTransform;
   }
 
   function handleMouseEnter() {
@@ -53,6 +51,7 @@ function FeaturedCard({
       videoRef.current.pause();
       videoRef.current.currentTime = 0;
     }
+
     const newTransform = `perspective(1200px) rotateX(0deg) rotateY(0deg)`;
     if (cardRef.current) {
       cardRef.current.style.transform = newTransform;
