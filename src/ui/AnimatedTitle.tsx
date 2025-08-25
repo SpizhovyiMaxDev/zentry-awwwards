@@ -4,7 +4,7 @@ import { useEffect, useRef } from "react";
 
 interface AnimatedTitleProps {
   title: string;
-  containerClass: string;
+  containerClass?: string;
 }
 
 function AnimatedTitle({ title, containerClass }: AnimatedTitleProps) {

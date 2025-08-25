@@ -1,6 +1,5 @@
 import clsx from "clsx";
-import gsap from "gsap";
-import { useEffect, useRef } from "react";
+import { useAnimatedSubheading } from "../hooks/useAnimatedSubheading";
 
 interface AnimatedSubheadingProps {
   subHeading: string;
@@ -11,30 +10,7 @@ function AnimatedSubheading({
   subHeading,
   className,
 }: AnimatedSubheadingProps) {
-  const subHeadingRef = useRef<HTMLDivElement | null>(null);
-
-  useEffect(() => {
-    const subHeading = subHeadingRef.current;
-    if (!subHeading) return;
-    const ctx = gsap.context(() => {}, subHeading);
-    const subHeadingAnimation = gsap.timeline({
-      scrollTrigger: {
-        trigger: subHeading,
-        start: "center 90%",
-        end: "center 90%",
-        toggleActions: "play none reverse none",
-      },
-    });
-
-    subHeadingAnimation.to("#animated-word", {
-      opacity: 1,
-      transform: "translateX(0)",
-      ease: "power2.inOut",
-      stagger: 0.05,
-    });
-
-    return ctx.revert();
-  }, []);
+  const { subHeadingRef } = useAnimatedSubheading();
 
   return (
     <div
@@ -46,11 +22,7 @@ function AnimatedSubheading({
     >
       {subHeading.split(" ").map((word, i) => {
         return (
-          <span
-            key={i}
-            id="animated-word"
-            className="transform:translateX(10px) opacity-0"
-          >
+          <span key={i} className="animated-subheading-word opacity-0">
             {word}
           </span>
         );
