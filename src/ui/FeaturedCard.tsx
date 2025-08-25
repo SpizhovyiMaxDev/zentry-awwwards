@@ -33,8 +33,8 @@ function FeaturedCard({
     const relativeX = (e.clientX - left) / width;
     const relativeY = (e.clientY - top) / height;
 
-    const tiltX = (relativeY - 0.5) * 4;
-    const tiltY = (relativeX - 0.5) * -4;
+    const tiltX = (relativeY - 0.5) * 8;
+    const tiltY = (relativeX - 0.5) * -8;
 
     const newTransform = `perspective(1200px) rotateX(${tiltX}deg) rotateY(${tiltY}deg)`;
     if (cardRef.current) {
@@ -63,7 +63,7 @@ function FeaturedCard({
     <div className={`feature-card ${containerClass}`}>
       <div
         ref={cardRef}
-        className={`relative flex size-full origin-center cursor-grab flex-col justify-between gap-2 overflow-hidden rounded-md border border-white/20 ${
+        className={`relative flex size-full origin-center cursor-grab flex-col justify-between gap-2 overflow-hidden rounded-md border border-white/20 transition-all hover:scale-98 ${
           isComingSoon ? "bg-violet-300" : "bg-black"
         }`}
         onMouseMove={handleMouseMove}
