@@ -11,7 +11,7 @@ function App() {
       <Hero />
       <About />
       <Features />
-      <Story />
+      {/* <Story /> */}
     </main>
   );
 }
