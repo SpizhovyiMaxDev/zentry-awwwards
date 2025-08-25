@@ -7,12 +7,12 @@ function About() {
 
   return (
     <div id="about" className="min-h-dvh w-full overflow-hidden">
-      <div className="relative mt-36 mb-8 flex flex-col items-center gap-5">
+      <div className="relative mt-36 mb-8 flex flex-col items-center gap-10">
         <AnimatedSubheading subHeading="Welcome to Zentry" />
 
         <AnimatedTitle
           title="Disc<b>o</b>ver the world's <br /> largest shared <b>a</b>dventure"
-          containerClass="mt-5 !text-black text-center"
+          containerClass="!text-black text-center"
         />
       </div>
 

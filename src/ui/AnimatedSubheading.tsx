@@ -17,7 +17,7 @@ function AnimatedSubheading({
       ref={subHeadingRef}
       className={clsx(
         className,
-        "font-general flex gap-2 text-sm uppercase md:text-[10px]",
+        "font-general flex gap-2 text-xs uppercase sm:text-sm",
       )}
     >
       {subHeading.split(" ").map((word, i) => {

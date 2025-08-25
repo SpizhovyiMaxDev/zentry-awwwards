@@ -1,6 +1,5 @@
 import clsx from "clsx";
-import gsap from "gsap";
-import { useEffect, useRef } from "react";
+import { useAnimatedTitle } from "../hooks/useAnimatedTitle";
 
 interface AnimatedTitleProps {
   title: string;
@@ -8,31 +7,7 @@ interface AnimatedTitleProps {
 }
 
 function AnimatedTitle({ title, containerClass }: AnimatedTitleProps) {
-  const containerRef = useRef<HTMLDivElement | null>(null);
-
-  useEffect(function () {
-    const container = containerRef.current;
-    if (!container) return;
-    const ctx = gsap.context(() => {
-      const titleAnimaton = gsap.timeline({
-        scrollTrigger: {
-          trigger: container,
-          start: "100 bottom",
-          end: "100 bottom",
-          toggleActions: "play none none reverse", // onEnter | onLeave | onEnterBack | onLeaveBack
-        },
-      });
-
-      titleAnimaton.to(".animated-word", {
-        opacity: 1,
-        transform: "translate3d(0,0,0) rotateY(0deg) rotateX(0deg)",
-        ease: "power2.inOut",
-        stagger: 0.05,
-      });
-    }, container);
-
-    return () => ctx.revert();
-  }, []);
+  const { containerRef } = useAnimatedTitle();
 
   return (
     <div ref={containerRef} className={clsx("animated-title", containerClass)}>
