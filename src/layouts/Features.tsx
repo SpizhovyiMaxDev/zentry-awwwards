@@ -48,7 +48,7 @@ function Features() {
           </p>
         </div>
 
-        <div className="grid grid-cols-2 gap-7.5 lg:gap-14">
+        <div className="grid grid-cols-2 gap-7.5">
           <FeaturedCard
             title="Radiant"
             description="A cross-platform metagame app, turning your activities across Web2 and Web3 games into a rewarding adventure."
