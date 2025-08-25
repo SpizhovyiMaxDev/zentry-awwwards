@@ -1,13 +1,11 @@
 import { useEffect, useRef, useState } from "react";
-import Button from "../ui/Button";
-import { TiLocationArrow } from "react-icons/ti";
-import { useGSAP } from "@gsap/react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/all";
-import Loader from "./Loader";
-import { useHeroVideoClickAnimation } from "../hooks/useHeroVideClickAnimation";
 
-gsap.registerPlugin(ScrollTrigger);
+import { useHeroVideoClickAnimation } from "../hooks/useHeroVideClickAnimation";
+import { useHeroScrollClipAnimation } from "../hooks/useHeroScrollClipAnimation";
+
+import { TiLocationArrow } from "react-icons/ti";
+import Button from "../ui/Button";
+import Loader from "./Loader";
 
 function Hero() {
   const [currIndex, setCurrIntex] = useState(1);
@@ -45,6 +43,7 @@ function Hero() {
     [loadedVideos],
   );
 
+  useHeroScrollClipAnimation();
   useHeroVideoClickAnimation(
     hasClicked,
     nextVideoRef,
@@ -52,24 +51,6 @@ function Hero() {
     setBgIndex,
     setDisableClick,
   );
-
-  useGSAP(() => {
-    gsap.fromTo(
-      "#video-frame",
-      {
-        clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
-      },
-      {
-        clipPath: "polygon(14% 0, 72% 0, 90% 90%, 8% 85%)",
-        scrollTrigger: {
-          trigger: "#video-frame",
-          start: "center center",
-          end: "bottom center",
-          scrub: true,
-        },
-      },
-    );
-  });
 
   return (
     <section className="relative h-dvh w-full overflow-x-hidden">
