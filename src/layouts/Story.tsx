@@ -1,6 +1,7 @@
 import { useParallaxEffect } from "../hooks/useParallaxEffect";
 import AnimatedSubheading from "../ui/AnimatedSubheading";
 import AnimatedTitle from "../ui/AnimatedTitle";
+import Button from "../ui/Button";
 
 function Story() {
   const { containerRef, targetRef, handleMouseMove, handleMouseLeave } =
@@ -42,6 +43,18 @@ function Story() {
                 className="pointer-events-none inline-block size-full"
               />
             </div>
+          </div>
+        </div>
+
+        <div className="mt-[-10%] flex w-full max-w-[80rem] justify-center px-8 pb-16 sm:mt-[-15%] sm:justify-end">
+          <div className="max-w-90 text-center sm:text-left">
+            <p className="font-circular-web text-md mb-5 text-blue-50">
+              Where realms converge, lies Zentry and the boundless pillar.
+              Discover its secrets and shape your fate amidst infinite
+              opportunities.
+            </p>
+
+            <Button containerClass="text-sm">Discover Prologue</Button>
           </div>
         </div>
       </div>

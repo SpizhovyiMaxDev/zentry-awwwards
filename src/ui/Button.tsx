@@ -2,7 +2,7 @@ import type { ReactElement, ReactNode } from "react";
 import clsx from "clsx";
 
 interface ButtonProps {
-  id: string;
+  id?: string;
   children: ReactNode;
   leftIcon?: ReactElement;
   rightIcon?: ReactElement;
