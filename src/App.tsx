@@ -1,4 +1,5 @@
 import About from "./layouts/About";
+import Contact from "./layouts/Contact";
 import Features from "./layouts/Features";
 import Hero from "./layouts/Hero";
 import Navbar from "./layouts/Navbar";
@@ -12,6 +13,7 @@ function App() {
       <About />
       <Features />
       <Story />
+      <Contact />
     </main>
   );
 }
