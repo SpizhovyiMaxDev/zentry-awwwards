@@ -55,13 +55,21 @@ body {
 }
 
 @layer utilities {
+  .rotate-x-12 {
+    transform: translateX(3px) perspective(300px) rotateY(14deg);
+  }
+
+  .rotate-x-0 {
+    transform: perspective(300px) rotateY(0deg);
+  }
+
+  .preserve-3d {
+    transform-style: preserve-3d;
+  }
+
   .mask-clip-path {
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
   }
-
-  /* .flex-center {
-    @apply flex items-center justify-center;
-  } */
 
   .border-hsla {
     @apply border border-white/20;
