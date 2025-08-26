@@ -26,7 +26,7 @@ function Story() {
         <div className="relative size-full">
           <AnimatedTitle
             title="The st<b>o</b>ry of <br />  a hidden real<b>m</b>"
-            containerClass=" pointer-events-none mix-blend-difference relative z-10"
+            containerClass="pointer-events-none mix-blend-difference z-10 xl:text-9xl"
           />
 
           <div className="w-full">
@@ -54,7 +54,9 @@ function Story() {
               opportunities.
             </p>
 
-            <Button containerClass="text-sm">Discover Prologue</Button>
+            <Button containerClass="text-sm bg-violet-50 text-black">
+              Discover Prologue
+            </Button>
           </div>
         </div>
       </div>

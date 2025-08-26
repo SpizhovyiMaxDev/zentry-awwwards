@@ -22,7 +22,7 @@ export function useAnimatedTitle() {
         },
       });
 
-      titleAnimation.to(".animated-word", {
+      titleAnimation.to(".animated-title-word", {
         opacity: 1,
         transform: "translate3d(0,0,0) rotateY(0deg) rotateX(0deg)",
         ease: "power2.inOut",

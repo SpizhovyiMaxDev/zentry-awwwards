@@ -13,19 +13,19 @@ function AnimatedTitle({ title, containerClass }: AnimatedTitleProps) {
     <div
       ref={containerRef}
       className={clsx(
-        "xs:text-6xl flex flex-col gap-1 text-4xl leading-[.8] text-white uppercase sm:px-32 md:text-7xl md:text-[6rem]",
+        "relative flex flex-col gap-1 text-4xl leading-[.8] uppercase sm:text-7xl",
         containerClass,
       )}
     >
       {title.split("<br />").map((line, index) => (
         <div
           key={index}
-          className="flex-center max-w-full flex-wrap gap-2 px-10 md:gap-3"
+          className="flex max-w-full flex-wrap items-center justify-center gap-2 px-10 md:gap-3"
         >
           {line.split(" ").map((word, idx) => (
             <span
               key={idx}
-              className="animated-word"
+              className="animated-title-word"
               dangerouslySetInnerHTML={{ __html: word }}
             />
           ))}
