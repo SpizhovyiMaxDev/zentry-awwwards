@@ -13,8 +13,8 @@ function App() {
       <Hero />
       <About />
       <Features />
-      <Story />
       <Partners />
+      <Story />
       <Updates />
     </main>
   );

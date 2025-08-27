@@ -47,7 +47,7 @@ function Story() {
           </div>
         </div>
 
-        <div className="mt-[-10%] flex w-full max-w-[80rem] justify-center px-8 pb-16 sm:mt-[-15%] sm:justify-end">
+        <div className="mt-[-10%] flex w-full max-w-[80rem] justify-center px-8 pb-16 sm:mt-[-15%] sm:justify-end sm:pb-32">
           <div className="max-w-90 text-center sm:text-left">
             <p className="font-circular-web text-md mb-5 text-blue-50">
               Where realms converge, lies Zentry and the boundless pillar.
