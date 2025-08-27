@@ -30,7 +30,7 @@ function Partners() {
               trigger: element,
               start: "top center",
               end: "bottom center",
-              toggleActions: "play none none reverse",
+              toggleActions: "play none none none",
               onEnter: () => {
                 gsap.to(element, { color: colors[2] });
                 const partnerItem = element.closest("li[data-idx]");
