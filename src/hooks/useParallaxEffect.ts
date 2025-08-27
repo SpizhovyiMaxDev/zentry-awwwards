@@ -6,6 +6,7 @@ interface ParallaxSettings {
   perspective: number;
   transitionDuration?: number;
   resetOnLeave?: boolean;
+  isTranslating?: boolean;
 }
 
 export function useParallaxEffect<T extends HTMLElement>(
@@ -27,7 +28,12 @@ export function useParallaxEffect<T extends HTMLElement>(
     const tiltX = (relativeY - 0.5) * settings.tiltX;
     const tiltY = (relativeX - 0.5) * settings.tiltY;
 
-    const newTransform = `perspective(${settings.perspective}px) rotateX(${tiltX}deg) rotateY(${tiltY}deg)`;
+    let newTransform = `perspective(${settings.perspective}px) rotateX(${tiltX}deg) rotateY(${tiltY}deg)`;
+
+    if (settings.isTranslating) {
+      newTransform += ` translate3d(${tiltY}px, ${tiltX}px, 0px)`;
+    }
+
     target.style.transform = newTransform;
   }
 
@@ -37,7 +43,12 @@ export function useParallaxEffect<T extends HTMLElement>(
     const target = targetRef.current;
     if (!target) return;
 
-    const newTransform = `perspective(${settings.perspective}px) rotateX(0deg) rotateY(0deg)`;
+    let newTransform = `perspective(${settings.perspective}px) rotateX(0deg) rotateY(0deg)`;
+
+    if (settings.isTranslating) {
+      newTransform += ` translate3d(0px, 0px, 0px)`;
+    }
+
     target.style.transform = newTransform;
   }
 

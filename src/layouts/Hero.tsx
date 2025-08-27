@@ -50,6 +50,7 @@ function Hero() {
       tiltY: 88,
       perspective: 1200,
       resetOnLeave: true,
+      isTranslating: true,
     });
 
   useHeroScrollClipAnimation();
