@@ -30,6 +30,7 @@ function FeaturedCard({
       tiltY: -10,
       perspective: 1200,
       resetOnLeave: true,
+      isTranslating: true,
     });
 
   function handleMouseEnter() {

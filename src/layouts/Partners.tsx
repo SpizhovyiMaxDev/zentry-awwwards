@@ -6,8 +6,10 @@ function Partners() {
   return (
     <section className="bg-black py-36">
       <div className="mx-auto grid max-w-[70rem] justify-center gap-16 px-8 sm:grid-cols-2 sm:gap-5">
-        <div className="xs:text-md max-w-[30rem] text-sm text-gray-400 lg:text-lg">
-          {parse(PARTNERS_ITEMS[0]?.description || "")}
+        <div className="max-w-[30rem]">
+          <div className="xs:text-md sticky top-1/2 -translate-y-1/2 text-sm text-gray-400 lg:text-lg">
+            {parse(PARTNERS_ITEMS[0].description)}
+          </div>
         </div>
         <ul className="max-w-[28rem]">
           <PartnerItem
