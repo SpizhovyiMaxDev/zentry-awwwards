@@ -32,7 +32,7 @@ function Story() {
 
           <div className="w-full">
             <div
-              className="mx-auto mt-[-10%] w-full max-w-[120rem]"
+              className="mx-auto mt-[-12%] w-full max-w-[120rem]"
               style={{
                 clipPath: "polygon(23% 10%, 75% 20%, 85% 58%, 20% 90%)",
               }}
