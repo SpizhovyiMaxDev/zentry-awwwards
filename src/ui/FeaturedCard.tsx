@@ -44,7 +44,6 @@ function FeaturedCard({
       videoRef.current.currentTime = 0;
     }
 
-    // Call the parallax hook's mouse leave handler
     handleMouseLeave();
   }
 
