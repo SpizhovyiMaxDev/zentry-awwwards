@@ -33,29 +33,41 @@ function Partners() {
               toggleActions: "play none none none",
               onEnter: () => {
                 gsap.to(element, { color: colors[2] });
-                const partnerItem = element.closest("li[data-idx]");
+                const partnerItem = element.closest(
+                  "li[data-idx]",
+                ) as HTMLElement;
                 if (partnerItem) {
-                  const idx = parseInt(
-                    partnerItem.getAttribute("data-idx") || "0",
-                  );
+                  const idx = parseInt(partnerItem.dataset.idx || "0");
                   setActivePartnerIndex(idx);
                 }
               },
               onLeave: () => {
+                const partnerItem = element.closest(
+                  "li[data-idx]",
+                ) as HTMLElement;
+                const idx = parseInt(partnerItem.dataset.idx || "0");
+                if (!partnerItem || idx === PARTNERS_ITEMS.length - 1) return;
+
                 gsap.to(element, { color: initialColor });
               },
               onEnterBack: () => {
                 gsap.to(element, { color: colors[2] });
 
-                const partnerItem = element.closest("li[data-idx]");
+                const partnerItem = element.closest(
+                  "li[data-idx]",
+                ) as HTMLElement;
                 if (!partnerItem) return;
 
-                const idx = parseInt(
-                  partnerItem.getAttribute("data-idx") || "0",
-                );
+                const idx = parseInt(partnerItem.dataset.idx || "0");
                 setActivePartnerIndex(idx);
               },
               onLeaveBack: () => {
+                const partnerItem = element.closest(
+                  "li[data-idx]",
+                ) as HTMLElement;
+                const idx = parseInt(partnerItem.dataset.idx || "0");
+                if (!partnerItem || !idx) return;
+
                 gsap.to(element, { color: initialColor });
               },
             },
@@ -75,11 +87,11 @@ function Partners() {
         <ul className="max-w-[28rem]">
           <PartnerItem
             partner={{ name: "Our Partners", category: "", description: "" }}
-            index={-1}
+            idx={-1}
             key="Our Partners"
           />
           {PARTNERS_ITEMS.map((partner, index) => (
-            <PartnerItem partner={partner} key={partner.name} index={index} />
+            <PartnerItem partner={partner} key={partner.name} idx={index} />
           ))}
         </ul>
       </div>
