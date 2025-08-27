@@ -11,7 +11,7 @@ function Partners() {
         </div>
         <ul className="max-w-[28rem]">
           <PartnerItem
-            partner={{ name: "Our Parthners", category: "", description: "" }}
+            partner={{ name: "Our Partners", category: "", description: "" }}
             key="Our Partners"
           />
           {PARTNERS_ITEMS.map((partner) => (
