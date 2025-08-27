@@ -12,7 +12,7 @@ function About() {
 
         <AnimatedTitle
           title="Disc<b>o</b>ver the world's <br /> largest shared <b>a</b>dventure"
-          containerClass="text-black"
+          className="text-4xl text-black sm:text-7xl"
         />
       </div>
 

@@ -46,7 +46,7 @@ function Button({
           isActive ? "rotate-x-12" : "rotate-x-0",
         )}
       />
-      <div className="relative z-10 flex items-center justify-center gap-1 text-black">
+      <div className="relative z-10 flex items-center justify-center gap-1">
         {leftIcon} {children} {rightIcon}
       </div>
     </button>

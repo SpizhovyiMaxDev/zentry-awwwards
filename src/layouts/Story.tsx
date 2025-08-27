@@ -26,7 +26,8 @@ function Story() {
         <div className="relative size-full">
           <AnimatedTitle
             title="The st<b>o</b>ry of <br />  a hidden real<b>m</b>"
-            containerClass="pointer-events-none mix-blend-difference z-10 xl:text-9xl"
+            containerClass="pointer-events-none mix-blend-difference z-10"
+            className="text-4xl sm:text-7xl xl:text-9xl"
           />
 
           <div className="w-full">
