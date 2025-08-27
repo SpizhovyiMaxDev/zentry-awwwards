@@ -69,7 +69,7 @@ function Hero() {
       onMouseLeave={handleMouseLeave}
     >
       {isLoading && (
-        <div className="flex-center absolute z-[100] h-dvh w-full overflow-hidden bg-violet-50">
+        <div className="absolute z-[100] flex h-dvh w-full items-center justify-center overflow-hidden bg-violet-50">
           <Loader />
         </div>
       )}
