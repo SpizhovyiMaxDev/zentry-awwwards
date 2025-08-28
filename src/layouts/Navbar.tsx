@@ -84,8 +84,8 @@ function Navbar() {
   }, []);
 
   return (
-    <div className="fixed top-0 z-20 w-full px-6 py-2.5">
-      <header ref={navContainerRef} className="rounded-lg px-4 py-2">
+    <header className="fixed top-0 z-20 w-full px-6 py-2.5">
+      <div ref={navContainerRef} className="rounded-lg px-4 py-2">
         <nav className="flex size-full items-center justify-between">
           <div className="flex items-center gap-7">
             <img src="/img/logo-white.webp" alt="logo" className="w-10" />
@@ -98,7 +98,7 @@ function Navbar() {
             </Button>
           </div>
 
-          <div className="flex h-full items-center">
+          <div className="flex h-full items-center gap-5">
             <ul className="hidden gap-1 md:flex">
               {navItems.map((item, i) => {
                 return (
@@ -111,7 +111,7 @@ function Navbar() {
               })}
             </ul>
             <button
-              className="ml-10 flex items-center space-x-0.5"
+              className="flex items-center space-x-0.5 px-4"
               onClick={toggleAudioIndicator}
             >
               <audio
@@ -133,8 +133,8 @@ function Navbar() {
             </button>
           </div>
         </nav>
-      </header>
-    </div>
+      </div>
+    </header>
   );
 }
 
