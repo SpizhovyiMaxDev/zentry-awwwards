@@ -8,6 +8,7 @@ const navItems: string[] = ["Nexus", "Valut", "Prologue", "About", "Contact"];
 
 function Navbar() {
   const [isAudioPlaying, setIsAudioPlaying] = useState(false);
+  const [hasUserInteracted, setHasUserInteracted] = useState(false);
   const navContainerRef = useRef<HTMLDivElement | null>(null);
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
@@ -56,14 +57,31 @@ function Navbar() {
     function () {
       const audio = audioRef.current;
       if (!audio) return;
-      if (isAudioPlaying) {
+
+      if (isAudioPlaying && hasUserInteracted) {
         audio.play();
-      } else {
+      } else if (!isAudioPlaying) {
         audio.pause();
       }
     },
-    [isAudioPlaying],
+    [isAudioPlaying, hasUserInteracted],
   );
+
+  useEffect(() => {
+    const handleUserInteraction = () => {
+      setHasUserInteracted(true);
+    };
+
+    document.addEventListener("click", handleUserInteraction);
+    document.addEventListener("touchstart", handleUserInteraction);
+    document.addEventListener("keydown", handleUserInteraction);
+
+    return () => {
+      document.removeEventListener("click", handleUserInteraction);
+      document.removeEventListener("touchstart", handleUserInteraction);
+      document.removeEventListener("keydown", handleUserInteraction);
+    };
+  }, []);
 
   return (
     <div className="fixed top-0 z-20 w-full px-6 py-2.5">
@@ -101,12 +119,13 @@ function Navbar() {
                 className="hidden"
                 src="/audio/loop.mp3"
                 loop
+                onLoadedData={() => setIsAudioPlaying(true)}
               />
               {[1, 2, 3, 4].map((bar) => {
                 return (
                   <div
                     key={bar}
-                    className={`indicator-line ${isAudioPlaying ? "active" : ""}`}
+                    className={`indicator-line ${isAudioPlaying && hasUserInteracted ? "active" : ""}`}
                     style={{ animationDelay: `${bar * 0.1}s` }}
                   />
                 );
