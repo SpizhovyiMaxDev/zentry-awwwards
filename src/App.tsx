@@ -1,5 +1,6 @@
 import About from "./layouts/About";
 import Features from "./layouts/Features";
+import Footer from "./layouts/Footer";
 import Hero from "./layouts/Hero";
 import Navbar from "./layouts/Navbar";
 import Partners from "./layouts/Partners";
@@ -16,6 +17,7 @@ function App() {
       <Partners />
       <Story />
       <Updates />
+      <Footer />
     </main>
   );
 }
