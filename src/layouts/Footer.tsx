@@ -1,5 +1,5 @@
 function Footer() {
-  return <footer className="bg-purple-300"></footer>;
+  return <footer className="bg-violet-300"></footer>;
 }
 
 export default Footer;
