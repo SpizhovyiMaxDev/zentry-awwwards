@@ -75,6 +75,14 @@ body {
     @apply border border-white/20;
   }
 
+  .text-grey-400 {
+    color: rgb(156 163 175);
+  }
+
+  .text-yellow-500 {
+    color: rgb(234 179 8);
+  }
+
   .nav-hover-btn {
     @apply font-general relative ms-10 cursor-pointer text-xs text-blue-50 uppercase;
   }
