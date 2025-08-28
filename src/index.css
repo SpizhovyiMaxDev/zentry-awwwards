@@ -67,22 +67,6 @@ body {
     transform-style: preserve-3d;
   }
 
-  .mask-clip-path {
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-  }
-
-  .border-hsla {
-    @apply border border-white/20;
-  }
-
-  .text-grey-400 {
-    color: rgb(156 163 175);
-  }
-
-  .text-yellow-500 {
-    color: rgb(234 179 8);
-  }
-
   .nav-hover-btn {
     @apply font-general relative ms-10 cursor-pointer text-xs text-blue-50 uppercase;
   }
@@ -106,10 +90,6 @@ body {
 
   .hero-heading {
     @apply font-zentry text-5xl font-black uppercase sm:right-10 sm:text-7xl md:text-9xl lg:text-[12rem];
-  }
-
-  .about-subtext {
-    @apply font-circular-web absolute bottom-[-80dvh] left-1/2 w-full max-w-96 -translate-x-1/2 text-center text-lg md:max-w-[34rem];
   }
 
   .animated-title-word {
@@ -244,43 +224,5 @@ body {
       height: 4px;
       transform: translateY(-0px);
     }
-  }
-
-  .story-img-container {
-    @apply relative h-[90vh] w-full md:h-dvh;
-  }
-
-  .story-img-mask {
-    @apply absolute top-0 left-0 size-full overflow-hidden md:top-[-10%] md:left-[20%] md:size-4/5;
-    clip-path: polygon(13% 0%, 60% 15%, 80% 78%, 0 100%);
-  }
-
-  .story-img-content {
-    @apply absolute top-16 left-10 h-[50dvh] w-full opacity-100 md:top-10 md:left-0 md:h-dvh lg:top-[-100px] lg:left-[-300px];
-    transform: translate3d(0, 0, 0) rotateX(0) rotateY(0) rotateZ(0) scale(1);
-  }
-
-  .gallery-img-container {
-    @apply size-64 overflow-hidden bg-violet-300;
-  }
-
-  .gallery-img {
-    @apply size-full bg-cover;
-  }
-
-  .gallery-img-4 {
-    @apply rounded-lg sm:size-80 md:h-96 md:w-[25rem];
-  }
-
-  .sword-man-clip-path {
-    clip-path: polygon(16% 0, 89% 15%, 75% 100%, 0 97%);
-  }
-
-  .contact-clip-path-1 {
-    clip-path: polygon(25% 0%, 74% 0, 69% 64%, 34% 73%);
-  }
-
-  .contact-clip-path-2 {
-    clip-path: polygon(29% 15%, 85% 30%, 50% 100%, 10% 64%);
   }
 }
