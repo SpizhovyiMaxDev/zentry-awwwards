@@ -5,13 +5,13 @@ function Footer() {
   return (
     <footer className="overflow-hidden bg-violet-300 py-8">
       <div className="px-8">
-        <div className="mb-32">
+        <div className="mb-16">
           <a
             href="https://maxdev.website"
             target="_blank"
-            className="font-zentry block cursor-pointer text-center text-[20dvw] leading-none tracking-tight text-black uppercase"
+            className="font-zentry block cursor-pointer text-center text-[33dvw] leading-none tracking-tight text-black uppercase"
           >
-            Max - dev
+            Zentry
           </a>
         </div>
 
