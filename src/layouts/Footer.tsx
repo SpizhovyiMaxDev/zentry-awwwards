@@ -11,13 +11,13 @@ function Footer() {
             target="_blank"
             className="font-zentry block cursor-pointer text-center text-[20dvw] leading-none tracking-tight text-black uppercase"
           >
-            ZENTRY
+            Max - dev
           </a>
         </div>
 
         <div className="sm: mx-auto mb-32 grid max-w-[90rem] grid-cols-2 gap-16 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
-          <div>
-            <img src="" alt="" />
+          <div className="w-20">
+            <img src="/img/logo-black.webp" alt="Zentry logo" />
           </div>
 
           {CONTACTS_ITEMS.map((item, i) => {
@@ -29,11 +29,11 @@ function Footer() {
                 <ul className="flex flex-col gap-2.5">
                   {item.contacts.map((contact, i) => {
                     return (
-                      <li key={i}>
+                      <li key={i} className="cursor-pointer">
                         {contact.type === "dummy" ? (
                           <p className="text-gray-800">{contact.name}</p>
                         ) : (
-                          <ButtonLink href={`#${contact.name.toLowerCase}`}>
+                          <ButtonLink href={`#${contact.name.toLowerCase()}`}>
                             {contact.name}
                           </ButtonLink>
                         )}
@@ -46,13 +46,13 @@ function Footer() {
           })}
         </div>
 
-        <div className="mx-auto flex max-w-[90rem] justify-between">
+        <div className="mx-auto flex max-w-[90rem] justify-between gap-8">
           <a
             target="_blank"
             href="https://maxdev.website"
             className="text-sm underline-offset-2 hover:underline"
           >
-            &copy;Copyright by <b>maxdev.website</b> in
+            &copy;Copyright by <b>maxdev.website</b> in{" "}
             {new Date().getFullYear()}
           </a>
 

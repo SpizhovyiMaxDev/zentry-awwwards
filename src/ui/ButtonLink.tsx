@@ -6,7 +6,11 @@ interface ButtonLinkProps {
 }
 
 function ButtonLink({ children, ...props }: ButtonLinkProps) {
-  return <a {...props}>{children}</a>;
+  return (
+    <a {...props} onClick={(e) => e.preventDefault()}>
+      {children}
+    </a>
+  );
 }
 
 export default ButtonLink;
