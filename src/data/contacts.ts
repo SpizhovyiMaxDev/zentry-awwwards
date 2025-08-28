@@ -1,5 +1,5 @@
 type ContactItem = {
-  span: string;
+  heading: string;
   contacts: {
     name: string;
     type: string;
@@ -8,7 +8,7 @@ type ContactItem = {
 
 export const CONTACTS_ITEMS: ContactItem[] = [
   {
-    span: "Explore",
+    heading: "Explore",
     contacts: [
       {
         name: "Home",
@@ -30,7 +30,7 @@ export const CONTACTS_ITEMS: ContactItem[] = [
   },
 
   {
-    span: "Products",
+    heading: "Products",
     contacts: [
       {
         name: "Radiant",
@@ -52,7 +52,7 @@ export const CONTACTS_ITEMS: ContactItem[] = [
   },
 
   {
-    span: "Follow Us",
+    heading: "Follow Us",
     contacts: [
       {
         name: "Discord",
@@ -74,7 +74,7 @@ export const CONTACTS_ITEMS: ContactItem[] = [
   },
 
   {
-    span: "Resources",
+    heading: "Resources",
     contacts: [
       {
         name: "Media Kit",

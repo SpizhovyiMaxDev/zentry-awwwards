@@ -2,7 +2,6 @@ import { useState, type ReactElement, type ReactNode } from "react";
 import clsx from "clsx";
 
 interface ButtonProps {
-  id?: string;
   children: ReactNode;
   leftIcon?: ReactElement;
   rightIcon?: ReactElement;
@@ -10,7 +9,6 @@ interface ButtonProps {
 }
 
 function Button({
-  id,
   leftIcon,
   rightIcon,
   containerClass,
@@ -31,7 +29,6 @@ function Button({
 
   return (
     <button
-      id={id}
       className={clsx(
         "group font-general relative w-fit cursor-pointer px-7 py-3",
         filteredContainerClass,
