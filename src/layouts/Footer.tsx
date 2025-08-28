@@ -15,7 +15,7 @@ function Footer() {
           </a>
         </div>
 
-        <div className="sm: mx-auto mb-32 grid max-w-[90rem] grid-cols-2 gap-16 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
+        <div className="sm: mx-auto mb-16 grid max-w-[90rem] grid-cols-2 gap-16 sm:mb-32 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
           <div className="w-20">
             <img src="/img/logo-black.webp" alt="Zentry logo" />
           </div>
