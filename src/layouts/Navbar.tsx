@@ -70,12 +70,11 @@ function Navbar() {
       <header ref={navContainerRef} className="rounded-lg px-4 py-2">
         <nav className="flex size-full items-center justify-between">
           <div className="flex items-center gap-7">
-            <img src="/img/logo.png" alt="logo" className="w-10" />
+            <img src="/img/logo-white.webp" alt="logo" className="w-10" />
 
             <Button
-              id="product-button"
               rightIcon={<TiLocationArrow />}
-              containerClass="text-sm flex-center gap-1  py-2! px-4!"
+              containerClass="text-sm flex-center gap-1 py-2! px-4!"
             >
               products
             </Button>
