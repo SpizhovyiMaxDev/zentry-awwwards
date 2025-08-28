@@ -135,7 +135,6 @@ function Hero() {
             </p>
 
             <Button
-              id="watch-trailer"
               leftIcon={<TiLocationArrow />}
               containerClass="text-black bg-yellow-300 flex items-center justify-center gap-1"
             >
