@@ -2,7 +2,7 @@ type ContactItem = {
   heading: string;
   contacts: {
     name: string;
-    type: string;
+    type: "dummy" | "link";
   }[];
 };
 
