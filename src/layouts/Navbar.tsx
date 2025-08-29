@@ -3,6 +3,7 @@ import Button from "../ui/Button";
 import { TiLocationArrow } from "react-icons/ti";
 import { useWindowScroll } from "react-use";
 import gsap from "gsap";
+import Logo from "../ui/Logo";
 
 const navItems: string[] = ["Nexus", "Valut", "Prologue", "About", "Contact"];
 
@@ -88,7 +89,7 @@ function Navbar() {
       <div ref={navContainerRef} className="rounded-lg px-4 py-2">
         <nav className="flex size-full items-center justify-between">
           <div className="flex items-center gap-7">
-            <img src="/img/logo-white.webp" alt="logo" className="w-10" />
+            <Logo variant="white" containerClassName="h-10 w-10" alt="logo" />
 
             <Button
               rightIcon={<TiLocationArrow />}
