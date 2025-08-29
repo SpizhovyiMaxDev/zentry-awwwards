@@ -6,6 +6,10 @@ body {
   overflow-x: hidden;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 @theme {
   --color-blue-50: #dfdff0;
   --color-blue-75: #dfdff2;
