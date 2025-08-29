@@ -21,7 +21,7 @@ function Story() {
   return (
     <section
       id="story"
-      className="w-screen overflow-hidden bg-black text-blue-50 transition-transform duration-100"
+      className="w-screen overflow-hidden bg-black py-16 text-blue-50 transition-transform duration-100"
       ref={containerRef}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
