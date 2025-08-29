@@ -1,4 +1,5 @@
 import { useParallaxEffect } from "../hooks/useParallaxEffect";
+import { usePolygonAnimation } from "../hooks/usePolygonAnimation";
 import AnimatedSubheading from "../ui/AnimatedSubheading";
 import AnimatedTitle from "../ui/AnimatedTitle";
 import Button from "../ui/Button";
@@ -11,6 +12,11 @@ function Story() {
       perspective: 1200,
       resetOnLeave: true,
     });
+
+  usePolygonAnimation({
+    triggerSelector: ".rotating-polygon-cover",
+    targetSelector: ".rotating-polygon",
+  });
 
   return (
     <section
@@ -30,9 +36,9 @@ function Story() {
             className="text-4xl sm:text-7xl xl:text-9xl"
           />
 
-          <div className="w-full">
+          <div className="rotating-polygon-cover w-full">
             <div
-              className="mx-auto mt-[-12%] w-full max-w-[120rem]"
+              className="rotating-polygon mx-auto mt-[-12%] w-full max-w-[120rem]"
               style={{
                 clipPath: "polygon(23% 10%, 75% 20%, 85% 58%, 20% 90%)",
               }}
