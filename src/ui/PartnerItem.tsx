@@ -18,7 +18,7 @@ function PartnerItem({ partner, idx }: PartnerItemProps) {
       </span>
       <div>
         <h3
-          className={`${isAnimateItem ? "animated-partner-heading" : ""} font-zentry text-2xl tracking-wide text-blue-50 uppercase sm:text-3xl md:text-4xl lg:text-5xl`}
+          className={`${isAnimateItem ? "animated-partner-heading" : ""} ${idx === -1 ? "text-blue-50" : ""} font-zentry text-2xl tracking-wide uppercase sm:text-3xl md:text-4xl lg:text-5xl`}
           data-initial-color={idx === 0 ? "yellow" : "blue"}
         >
           {partner.name}
