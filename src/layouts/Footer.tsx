@@ -6,13 +6,9 @@ function Footer() {
     <footer className="overflow-hidden bg-violet-300 py-8">
       <div className="px-8">
         <div className="mb-16">
-          <a
-            href="https://maxdev.website"
-            target="_blank"
-            className="font-zentry block cursor-pointer text-center text-[33dvw] leading-none tracking-tight text-black uppercase"
-          >
+          <p className="font-zentry block cursor-pointer text-center text-[33dvw] leading-none tracking-tight text-black uppercase">
             Zentry
-          </a>
+          </p>
         </div>
 
         <div className="sm: mx-auto mb-16 grid max-w-[90rem] grid-cols-2 gap-16 sm:mb-32 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">

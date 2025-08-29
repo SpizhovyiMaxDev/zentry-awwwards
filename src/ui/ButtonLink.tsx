@@ -1,10 +1,10 @@
 import { useRef, useState, type ReactNode } from "react";
 
-interface ButtonLinkProps {
+type ButtonLinkProps = {
   children: ReactNode;
   href: string;
-  type: string;
-}
+  type: "dummy" | "link";
+};
 
 function ButtonLink({ children, type, ...props }: ButtonLinkProps) {
   const [isActive, setIsActive] = useState(false);
