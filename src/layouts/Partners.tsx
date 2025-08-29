@@ -16,7 +16,7 @@ function Partners() {
     <section className="bg-black py-36">
       <div className="mx-auto grid max-w-[70rem] justify-center gap-16 px-8 sm:grid-cols-2 sm:gap-5">
         <div className="max-w-[30rem]">
-          <div className="xs:text-md sticky top-1/2 -translate-y-1/2 text-sm text-gray-400 lg:text-lg">
+          <div className="xs:text-md sticky top-1/2 min-h-[5rem] -translate-y-1/2 text-sm text-gray-400 lg:text-lg">
             {parse(PARTNERS_ITEMS[activePartnerIndex].description || "")}
           </div>
         </div>
