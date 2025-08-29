@@ -1,7 +1,6 @@
-import { CONTACTS_ITEMS } from "../data/contacts";
-import ButtonLink from "../ui/ButtonLink";
 import Logo from "../ui/Logo";
 import FooterTitle from "../ui/FooterTitle";
+import ContactsList from "../ui/ContactsList";
 
 function Footer() {
   return (
@@ -16,29 +15,7 @@ function Footer() {
             alt="Zentry logo"
           />
 
-          {CONTACTS_ITEMS.map((item, i) => {
-            return (
-              <div key={i}>
-                <h2 className="mb-6 text-xs text-black uppercase">
-                  {item.heading}
-                </h2>
-                <ul className="flex flex-col gap-2.5">
-                  {item.contacts.map((contact, i) => {
-                    return (
-                      <li key={i}>
-                        <ButtonLink
-                          type={contact.type}
-                          href={`#${contact.name.toLowerCase()}`}
-                        >
-                          {contact.name}
-                        </ButtonLink>
-                      </li>
-                    );
-                  })}
-                </ul>
-              </div>
-            );
-          })}
+          <ContactsList />
         </div>
 
         <div className="mx-auto flex max-w-[90rem] justify-between gap-8">
