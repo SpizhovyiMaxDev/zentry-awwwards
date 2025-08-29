@@ -5,10 +5,10 @@ export function useSmoothScroll() {
   useEffect(() => {
     const lenis = new Lenis({
       duration: 1.2, // Controls how smooth the scrolling is (higher = smoother but slower)
-      orientation: "vertical",
-      smoothWheel: true, // Smooth mouse wheel scrolling
-      wheelMultiplier: 1.4, // Controls scroll speed (lower = slower scrolling)
-      touchMultiplier: 2, // Touch scroll sensitivity
+      orientation: "vertical", // Scroll direction: "vertical" | "horizontal" | "both"
+      smoothWheel: true, // Enable smooth mouse wheel scrolling (creates buttery smooth feel)
+      wheelMultiplier: 1, // Prover of scrolling mouse wheel
+      touchMultiplier: 2, // Touch/mobile scroll sensitivity: 1.0 = normal, 2.0 = sensitive, 3.0 = very sensitive
       infinite: false,
     });
 

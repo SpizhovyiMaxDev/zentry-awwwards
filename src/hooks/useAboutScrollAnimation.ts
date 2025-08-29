@@ -10,8 +10,8 @@ export function useAboutScrollAnimation() {
       scrollTrigger: {
         trigger: "#clip",
         start: "top top",
-        end: "+=800 center",
-        scrub: 1,
+        end: "bottom center",
+        scrub: 2,
         pin: true,
       },
     });
