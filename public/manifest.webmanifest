@@ -1,0 +1,32 @@
+{
+  "name": "Zentry Awwwards",
+  "short_name": "Zentry",
+  "description": "Zentry Awwwards - Award-winning creative agency website",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#000000",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/img/logo-white-72.webp",
+      "sizes": "72x72",
+      "type": "image/webp",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/img/logo-white-192.webp",
+      "sizes": "192x192",
+      "type": "image/webp",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/img/logo-white-512.webp",
+      "sizes": "512x512",
+      "type": "image/webp",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["business", "design", "creativity"],
+  "lang": "en"
+}
