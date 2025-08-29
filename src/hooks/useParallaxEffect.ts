@@ -30,11 +30,13 @@ export function useParallaxEffect<T extends HTMLElement>(
     const tiltX = (relativeY - 0.5) * settings.tiltX;
     const tiltY = (relativeX - 0.5) * settings.tiltY;
 
-    target.style.transform = `
+    target.style.transform = !isMobile
+      ? `
       perspective(${settings.perspective}px) 
       rotateX(${tiltX}deg) rotateY(${tiltY}deg) 
-      ${settings.isTranslating && !isMobile ? `translate3d(${tiltY * 3}px, ${-tiltX * 3}px, 0px)` : ""}
-    `;
+      ${settings.isTranslating ? `translate3d(${tiltY * 3}px, ${-tiltX * 3}px, 0px)` : ""}
+    `
+      : "";
   }
 
   function handleMouseLeave() {
@@ -43,13 +45,13 @@ export function useParallaxEffect<T extends HTMLElement>(
     const target = targetRef.current;
     if (!target) return;
 
-    let newTransform = `perspective(${settings.perspective}px) rotateX(0deg) rotateY(0deg)`;
-
-    if (settings.isTranslating) {
-      newTransform += ` translate3d(0px, 0px, 0px)`;
-    }
-
-    target.style.transform = newTransform;
+    target.style.transform = !isMobile
+      ? `
+    perspective(${settings.perspective}px) 
+    rotateX(0deg) 
+    rotateY(0deg) 
+    ${settings.isTranslating ? "translate3d(0px, 0px, 0px)" : ""}`
+      : "";
   }
 
   return {
