@@ -20,7 +20,7 @@ function Partners() {
             {parse(PARTNERS_ITEMS[activePartnerIndex].description || "")}
           </div>
         </div>
-        <ul className="max-w-[28rem] space-y-2">
+        <ul className="max-w-[28rem]">
           <PartnerItem
             partner={{ name: "Our Partners", category: "", description: "" }}
             idx={-1}

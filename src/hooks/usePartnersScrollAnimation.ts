@@ -32,7 +32,7 @@ export function usePartnersScrollAnimation({
   */
 
   useGSAP(() => {
-    const colors = ["rgb(239 246 255)", "rgb(156 163 175)", "rgb(234 179 8)"];
+    const colors = ["#eff6ff", "#9ca3af", "#fcd34d"];
 
     gsap.utils
       .toArray<HTMLElement>(
@@ -71,7 +71,6 @@ export function usePartnersScrollAnimation({
         trigger: element,
         start: "top center",
         end: "bottom center",
-        toggleActions: "play none none none",
         onEnter: () => {
           gsap.to(element, { color: colors[2] });
           if (partnerItem) {
