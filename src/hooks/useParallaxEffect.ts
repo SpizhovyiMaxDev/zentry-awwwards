@@ -1,4 +1,5 @@
 import { useRef, type MouseEvent } from "react";
+import { useMobileSyncSize } from "./useMobileSyncSize";
 
 interface ParallaxSettings {
   tiltX: number;
@@ -12,6 +13,7 @@ interface ParallaxSettings {
 export function useParallaxEffect<T extends HTMLElement>(
   settings: ParallaxSettings,
 ) {
+  const isMobile = useMobileSyncSize();
   const containerRef = useRef<HTMLDivElement | null>(null);
   const targetRef = useRef<T | null>(null);
 
@@ -31,7 +33,7 @@ export function useParallaxEffect<T extends HTMLElement>(
     target.style.transform = `
       perspective(${settings.perspective}px) 
       rotateX(${tiltX}deg) rotateY(${tiltY}deg) 
-      ${settings.isTranslating ? `translate3d(${tiltY * 3}px, ${-tiltX * 3}px, 0px)` : ""}
+      ${settings.isTranslating && !isMobile ? `translate3d(${tiltY * 3}px, ${-tiltX * 3}px, 0px)` : ""}
     `;
   }
 
