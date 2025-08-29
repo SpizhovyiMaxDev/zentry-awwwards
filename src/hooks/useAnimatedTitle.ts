@@ -16,8 +16,8 @@ export function useAnimatedTitle() {
       const titleAnimation = gsap.timeline({
         scrollTrigger: {
           trigger: container,
-          start: "100 bottom",
-          end: "100 bottom",
+          start: "50% bottom",
+          end: "50% bottom",
           toggleActions: "play none none reverse", // onEnter | onLeave | onEnterBack | onLeaveBack
         },
       });
