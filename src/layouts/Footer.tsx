@@ -29,14 +29,13 @@ function Footer() {
                 <ul className="flex flex-col gap-2.5">
                   {item.contacts.map((contact, i) => {
                     return (
-                      <li key={i} className="cursor-pointer">
-                        {contact.type === "dummy" ? (
-                          <p className="text-gray-800">{contact.name}</p>
-                        ) : (
-                          <ButtonLink href={`#${contact.name.toLowerCase()}`}>
-                            {contact.name}
-                          </ButtonLink>
-                        )}
+                      <li key={i}>
+                        <ButtonLink
+                          type={contact.type}
+                          href={`#${contact.name.toLowerCase()}`}
+                        >
+                          {contact.name}
+                        </ButtonLink>
                       </li>
                     );
                   })}
