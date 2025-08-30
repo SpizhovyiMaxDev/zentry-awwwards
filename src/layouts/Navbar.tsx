@@ -120,7 +120,6 @@ function Navbar() {
                 className="hidden"
                 src="/audio/loop.mp3"
                 loop
-                onLoadedData={() => setIsAudioPlaying(true)}
               />
               {[1, 2, 3, 4].map((bar) => {
                 return (
