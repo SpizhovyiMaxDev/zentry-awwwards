@@ -6,7 +6,7 @@ function Features() {
   useFeatureCardsScrollAnimation();
 
   return (
-    <section className="overflow-hidden bg-black py-16 md:py-32">
+    <section id="features" className="overflow-hidden bg-black py-16 md:py-32">
       <div className="mx-auto max-w-[95rem] px-7.5 lg:px-14">
         <div className="mb-32 max-w-[33.5rem]">
           <p className="font-circular-web text-lg text-blue-50">

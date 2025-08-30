@@ -5,7 +5,13 @@ import { useWindowScroll } from "react-use";
 import gsap from "gsap";
 import Logo from "../ui/Logo";
 
-const navItems: string[] = ["Nexus", "Valut", "Prologue", "About", "Contact"];
+const NAV_ITEMS: string[] = [
+  "About",
+  "Features",
+  "Story",
+  "Updates",
+  "Contacts",
+];
 
 function Navbar() {
   const [isAudioPlaying, setIsAudioPlaying] = useState(false);
@@ -101,16 +107,20 @@ function Navbar() {
 
           <div className="flex h-full items-center gap-5">
             <ul className="hidden gap-1 md:flex">
-              {navItems.map((item, i) => {
+              {NAV_ITEMS.map((item, i) => {
                 return (
                   <li key={i}>
-                    <a href="#" className="nav-hover-btn">
+                    <a
+                      href={`#${item.toLowerCase()}`}
+                      className="nav-hover-btn"
+                    >
                       {item}
                     </a>
                   </li>
                 );
               })}
             </ul>
+
             <button
               className="flex items-center space-x-0.5 px-4"
               onClick={toggleAudioIndicator}

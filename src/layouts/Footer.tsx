@@ -4,7 +4,7 @@ import ContactsList from "../ui/ContactsList";
 
 function Footer() {
   return (
-    <footer className="overflow-hidden bg-violet-300 py-8">
+    <footer id="contacts" className="overflow-hidden bg-violet-300 py-8">
       <div className="px-8">
         <FooterTitle text="Zentry" />
 

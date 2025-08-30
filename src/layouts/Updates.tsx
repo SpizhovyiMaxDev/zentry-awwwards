@@ -5,7 +5,7 @@ import { UPDATES_CARDS } from "../data/updates";
 
 function Updates() {
   return (
-    <section className="bg-blue-50 py-36">
+    <section id="updates" className="bg-blue-50 py-36">
       <div className="mx-auto flex h-full max-w-[90rem] flex-col gap-20 px-8 md:flex-row">
         <div className="md:flex-1">
           <div className="sticky top-14 max-w-96">
