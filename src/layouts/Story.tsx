@@ -61,7 +61,10 @@ function Story() {
               opportunities.
             </p>
 
-            <Button containerClass="text-sm bg-violet-50 text-black">
+            <Button
+              buttonClass="text-sm text-black"
+              backgroundClass="bg-violet-50"
+            >
               Discover Prologue
             </Button>
           </div>

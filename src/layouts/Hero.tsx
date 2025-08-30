@@ -136,7 +136,8 @@ function Hero() {
 
             <Button
               leftIcon={<TiLocationArrow />}
-              containerClass="text-black bg-yellow-300 flex items-center justify-center gap-1"
+              buttonClass="text-black flex items-center justify-center gap-1"
+              backgroundClass="bg-yellow-300"
             >
               Watch Trailer
             </Button>

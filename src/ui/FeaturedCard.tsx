@@ -2,6 +2,7 @@ import clsx from "clsx";
 import { useRef } from "react";
 import { TiLocationArrow } from "react-icons/ti";
 import { useParallaxEffect } from "../hooks/useParallaxEffect";
+import Button from "./Button";
 
 interface FeaturedCardProps {
   title?: string;
@@ -9,18 +10,22 @@ interface FeaturedCardProps {
   bgVideoSrc?: string;
   videoClass?: string;
   containerClass?: string;
-  isComingSoon?: boolean;
+  isMoreComingSoon?: boolean;
   playVideo?: boolean;
+  isTrial?: boolean;
+  isComingSoon?: boolean;
 }
 
 function FeaturedCard({
   title,
   description,
   bgVideoSrc,
-  isComingSoon,
+  isMoreComingSoon,
   videoClass,
   containerClass,
   playVideo,
+  isTrial,
+  isComingSoon,
 }: FeaturedCardProps) {
   const videoRef = useRef<HTMLVideoElement | null>(null);
 
@@ -59,7 +64,7 @@ function FeaturedCard({
         <div
           ref={targetRef}
           className={`relative flex size-full origin-center cursor-grab flex-col justify-between gap-2 overflow-hidden rounded-md border border-white/20 ${
-            isComingSoon ? "bg-violet-300" : "bg-black"
+            isMoreComingSoon ? "bg-violet-300" : "bg-black"
           }`}
           onMouseEnter={handleMouseEnter}
         >
@@ -77,11 +82,11 @@ function FeaturedCard({
             />
           )}
           <div
-            className={`relative z-10 p-5 ${isComingSoon ? "text-black" : "text-blue-50"}`}
+            className={`relative z-10 p-5 ${isMoreComingSoon ? "text-black" : "text-blue-50"}`}
           >
             {title && (
               <h1
-                className={`font-zentry max-w-10 text-4xl font-bold tracking-wide ${isComingSoon ? "md:text-7xl" : "md:text-6xl"}`}
+                className={`font-zentry max-w-10 text-4xl font-bold tracking-wide ${isMoreComingSoon ? "md:text-7xl" : "md:text-6xl"}`}
               >
                 {title}
               </h1>
@@ -92,11 +97,31 @@ function FeaturedCard({
               </p>
             )}
           </div>
-          {isComingSoon && (
+          {isMoreComingSoon && (
             <div className="p-2.5 text-right">
               <button className="background-black rounded-xl uppercase">
                 <TiLocationArrow className="h-15 w-15" />
               </button>
+            </div>
+          )}
+
+          {(isTrial || isComingSoon) && (
+            <div className="flex gap-2.5 p-2.5">
+              {isComingSoon && (
+                <Button
+                  buttonClass="text-gray-400"
+                  backgroundClass="bg-white"
+                  leftIcon={<TiLocationArrow />}
+                >
+                  Coming Soon
+                </Button>
+              )}
+
+              {isTrial && (
+                <Button buttonClass="" backgroundClass="bg-white">
+                  Try Beta
+                </Button>
+              )}
             </div>
           )}
         </div>

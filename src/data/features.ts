@@ -5,6 +5,8 @@ export type FeatureCardData = {
   bgVideoSrc?: string;
   videoClass?: string;
   isComingSoon?: boolean;
+  isMoreComingSoon?: boolean;
+  isTrial?: boolean;
   playVideo?: boolean;
 };
 
@@ -16,6 +18,7 @@ export const FEATURE_CARDS: FeatureCardData[] = [
     containerClass: "h-[30rem] lg:h-[65vh] col-span-2 row-span-1",
     bgVideoSrc: "/videos/feature-1.mp4",
     videoClass: "object-left",
+    isComingSoon: true,
   },
   {
     title: "Zigma",
@@ -25,6 +28,7 @@ export const FEATURE_CARDS: FeatureCardData[] = [
       "row-span-1 aspect-[6/10] ml-[15vw] sm:ml-0 col-span-2 row-span-1 sm:col-span-1 sm:row-span-2",
     bgVideoSrc: "/videos/feature-2.mp4",
     videoClass: "object-top size-full",
+    isTrial: true,
   },
   {
     title: "Nexus",
@@ -34,6 +38,8 @@ export const FEATURE_CARDS: FeatureCardData[] = [
       "row-span-1 col-span-2 row-span-1 sm:col-span-1 sm:row-span-1 mr-[15vw] sm:mr-0 aspect-[3/3] sm:aspect-auto",
     bgVideoSrc: "/videos/feature-3.mp4",
     videoClass: "object-center size-full",
+    isComingSoon: true,
+    isTrial: true,
   },
   {
     title: "Azul",
@@ -43,13 +49,14 @@ export const FEATURE_CARDS: FeatureCardData[] = [
       "row-span-1 col-span-2 row-span-1 sm:col-span-1 sm:row-span-1 ml-[15vw] sm:ml-0 aspect-[3/3] sm:aspect-auto",
     bgVideoSrc: "/videos/feature-4.mp4",
     videoClass: "object-top size-full",
+    isComingSoon: true,
   },
   {
     title: "More Coming Soon!",
     containerClass:
       "row-span-1 col-span-2 row-span-1 sm:col-span-1 sm:row-span-1 sm:mr-0 mr-[35dvw]",
     videoClass: "object-center size-full",
-    isComingSoon: true,
+    isMoreComingSoon: true,
   },
   {
     bgVideoSrc: "/videos/feature-5.mp4",
