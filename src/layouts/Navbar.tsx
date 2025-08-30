@@ -14,7 +14,7 @@ const NAV_ITEMS: string[] = [
 ];
 
 function Navbar() {
-  const [isAudioPlaying, setIsAudioPlaying] = useState(false);
+  const [isAudioPlaying, setIsAudioPlaying] = useState(true);
   const [hasUserInteracted, setHasUserInteracted] = useState(false);
   const navContainerRef = useRef<HTMLDivElement | null>(null);
   const audioRef = useRef<HTMLAudioElement | null>(null);
