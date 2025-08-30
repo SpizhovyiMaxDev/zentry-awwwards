@@ -36,7 +36,7 @@ function Story() {
             className="text-4xl sm:text-7xl xl:text-9xl"
           />
 
-          <div className="rotating-polygon-cover w-full">
+          <div className="rotating-polygon-cover">
             <div
               className="rotating-polygon mx-auto mt-[-12%] w-full max-w-[120rem]"
               style={{
@@ -62,7 +62,7 @@ function Story() {
             </p>
 
             <Button
-              buttonClass="text-sm text-black"
+              buttonClass="text-sm text-black px-7 py-3"
               backgroundClass="bg-violet-50"
             >
               Discover Prologue

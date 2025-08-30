@@ -19,7 +19,7 @@ function Updates() {
               Stay updated with the latest news, events, and updates in our
               ecosystem. Be part of our universe's growth and evolution.
             </p>
-            <Button buttonClass="text-white bg-black hover:bg-gray-800">
+            <Button buttonClass="text-white bg-black hover:bg-gray-800 px-7 py-3">
               Read All News
             </Button>
           </div>

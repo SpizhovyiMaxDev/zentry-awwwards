@@ -50,7 +50,6 @@ function Button({
     extractBackgroundClasses(buttonClass);
   const finalBackgroundClass = backgroundClasses || backgroundClass;
 
-  //px-7 py-3
   return (
     <button
       className={clsx(
