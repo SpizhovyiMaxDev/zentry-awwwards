@@ -3,6 +3,7 @@ import { useRef } from "react";
 import { TiLocationArrow } from "react-icons/ti";
 import { useParallaxEffect } from "../hooks/useParallaxEffect";
 import Button from "./Button";
+import { FaRocket } from "react-icons/fa";
 
 interface FeaturedCardProps {
   title?: string;
@@ -110,7 +111,7 @@ function FeaturedCard({
               {isComingSoon && (
                 <Button
                   buttonClass="text-gray-400"
-                  backgroundClass="bg-white"
+                  backgroundClass="bg-black border-gray-400 border"
                   leftIcon={<TiLocationArrow />}
                 >
                   Coming Soon
@@ -118,7 +119,11 @@ function FeaturedCard({
               )}
 
               {isTrial && (
-                <Button buttonClass="" backgroundClass="bg-white">
+                <Button
+                  leftIcon={<FaRocket />}
+                  buttonClass="text-yellow-300 hover:text-black hover:bg-yellow-300"
+                  backgroundClass="bg-none border border-yellow-300"
+                >
                   Try Beta
                 </Button>
               )}

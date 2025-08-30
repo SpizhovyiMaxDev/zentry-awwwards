@@ -99,8 +99,7 @@ function Navbar() {
 
             <Button
               rightIcon={<TiLocationArrow />}
-              buttonClass="text-sm flex-center gap-1 py-2! px-4!"
-              backgroundClass="bg-white"
+              buttonClass="text-sm flex-center gap-1 py-2! px-4! bg-white hover:bg-gray-100"
             >
               products
             </Button>
