@@ -50,10 +50,11 @@ function Button({
     extractBackgroundClasses(buttonClass);
   const finalBackgroundClass = backgroundClasses || backgroundClass;
 
+  //px-7 py-3
   return (
     <button
       className={clsx(
-        "group font-general relative w-fit cursor-pointer px-7 py-3",
+        "group font-general relative w-fit cursor-pointer",
         remainingClasses,
       )}
       onMouseEnter={() => setIsActive(true)}

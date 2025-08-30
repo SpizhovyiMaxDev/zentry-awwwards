@@ -107,10 +107,10 @@ function FeaturedCard({
           )}
 
           {(isTrial || isComingSoon) && (
-            <div className="flex gap-2.5 p-2.5">
+            <div className="flex flex-wrap-reverse gap-2.5 p-2.5">
               {isComingSoon && (
                 <Button
-                  buttonClass="text-gray-400"
+                  buttonClass="text-gray-400 text-sm px-4 py-2"
                   backgroundClass="bg-black border-gray-400 border"
                   leftIcon={<TiLocationArrow />}
                 >
@@ -121,7 +121,7 @@ function FeaturedCard({
               {isTrial && (
                 <Button
                   leftIcon={<FaRocket />}
-                  buttonClass="text-yellow-300 hover:text-black hover:bg-yellow-300"
+                  buttonClass="text-yellow-300 hover:text-black hover:bg-yellow-300 text-sm px-4 py-2"
                   backgroundClass="bg-none border border-yellow-300"
                 >
                   Try Beta
